@@ -1,5 +1,5 @@
 ---
-title: "Análise Exploratória de Dados com python"
+title: "Análise Exploratória de Dados com `python`"
 subtitle: "  "
 author: "Jodavid Ferreira"
 institute: "UFPB - PPGMDS | HartB Group"
@@ -251,10 +251,13 @@ O primeiro passo nesse caso é importar bibliotecas necessárias para análise:
 # Bibliotecas necessarias para Analise dos Dados
 import pandas as pd
 import numpy as np
-
+import scipy as sp
+# -----------------
 # Bibliotecas Gráficas
 import matplotlib.pyplot as plt
 import seaborn as sns
+# -----------------
+import plotly.express as px
 # -----------------
 
 ```
@@ -285,8 +288,6 @@ import seaborn as sns
 dados = pd.read_csv("dataset/used_cars_data.csv")
 # -----------------
 ```
-
-<br/>
 
 
 ### Visualizando um *cabeçalho* dos dados
@@ -329,6 +330,33 @@ dados.info()
 ![](images/pandas_dtypes.png){.absolute bottom=150 right=50 width="450"}
 
 
+------------------------------------------------------------------------
+
+## Python - Tamanho da base de dados
+
+<hr/>
+
+<br/>
+
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Visualizando Quantidades de Linhas e colunas
+len(dados)
+# -----------------
+print("A quantidade de linhas da base são: " + str(len(dados)))
+# -----------------
+```
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+len(dados.columns)
+# -----------------
+print("A quantidade de colunas da base são: " + str(len(dados.columns)))
+# -----------------
+```
 
 
 -----------------------------------------------------
@@ -400,6 +428,356 @@ dados.info()
 
 -----------------------------------------------------
 
+
+## Python - Métricas Estatísticas
+
+<hr/>
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+dados.describe()
+# -----------------
+```
+
+<br/>
+
+OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como
+*int*, *float*.
+
+-----------------------------------------------------
+
+
+## Python - Medidas de tend. central
+
+<hr/>
+
+<p/>
+
+Calculando Média de diferentes formas:
+
+
+#### Usando Pandas
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+dados["Price"].mean()
+# -----------------
+```
+
+#### Usando numpy
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+np.mean(dados["Price"])
+# -----------------
+```
+
+#### Usando scipy
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+sp.mean(dados["Price"])
+# -----------------
+```
+
+
+-----------------------------------------------------
+
+
+## Python - Medidas de tend. central
+
+<hr/>
+
+<p/>
+
+Calculando Mínimo de diferentes formas:
+
+
+#### Usando Pandas
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+dados["Price"].min()
+# -----------------
+```
+
+#### Usando numpy
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+np.min(dados["Price"])
+# -----------------
+```
+
+
+-----------------------------------------------------
+
+
+## Python - Medidas de tend. central
+
+<hr/>
+
+<p/>
+
+Calculando quantis:
+
+
+#### Usando Pandas
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+dados["Price"].quantile()
+# -----------------
+```
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+dados["Price"].median()
+# -----------------
+```
+
+
+<p/>
+
+#### Usando numpy
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+np.quantile(dados["Price"], 0.5)
+# -----------------
+```
+
+Porque com `numpy` retornou `nan`?
+
+
+
+-----------------------------------------------------
+
+
+## Python - Medidas de tend. central
+
+<hr/>
+
+<p/>
+
+Calculando quantis:
+
+
+#### Corrigindo numpy
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+np.nanquantile(dados["Price"], 0.5)
+# -----------------
+```
+
+##### considerando mais de um quantil
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+np.nanquantile(dados["Price"], [0,0.25,0.5,0.75,1]) #Numpy
+# -----------------
+```
+
+
+<p/>
+
+#### Usando pandas
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+dados["Price"].quantile([0,0.25,0.5,0.75,1]) #Pandas
+# -----------------
+```
+
+
+
+
+-----------------------------------------------------
+
+
+## Python - Medidas de tend. central
+
+<hr/>
+
+<br/>
+
+Calculando quantis em mais de uma coluna:
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Quantis mais colunas
+# -----------------
+dados[["Kilometers_Driven","Price"]].quantile([0,0.25,0.5,0.75,1]) #Pandas
+# -----------------
+```
+
+<p/>
+
+OBS.: Para não ficar sempre mostrando mais de uma solução, vamos focar no Pandas e seguir com ela até o fim desse minicurso.
+
+
+-----------------------------------------------------
+
+
+## Python - Medidas de dispersão
+
+<hr/>
+
+<br/>
+
+Calculando variância entre as variáveis
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+dados.var()
+# -----------------
+```
+
+<br/>
+
+OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como
+*int*, *float*.
+
+-----------------------------------------------------
+
+
+## Python - Medidas de dispersão
+
+<hr/>
+
+<br/>
+
+Calculando correlação entre as variáveis
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+dados.cov()
+# -----------------
+```
+
+<br/>
+
+OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como
+*int*, *float*.
+
+
+-----------------------------------------------------
+
+
+## Python - Medidas de dispersão
+
+<hr/>
+
+<br/>
+
+Calculando correlação entre as variáveis
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Quantis mais colunas
+# -----------------
+dados.corr()
+# -----------------
+```
+
+<br/>
+
+OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como
+*int*, *float*.
+
+
+-----------------------------------------------------
+
+## Python - Variáveis Qualitativas
+
+<hr/>
+
+
+Calculando frequências quando as variáveis são categóricas
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# ---------------------
+dados["Name"].value_counts()
+# ---------------------
+```
+
+<br/>
+
+
+
+-----------------------------------------------------
+
+## Python - Variáveis Qualitativas
+
+<hr/>
+
+
+Calculando frequências quando as variáveis são categóricas
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# ---------------------
+dados.groupby(["Name"])["Name"] \
+      .count() \
+      .reset_index(name='count') \
+      .sort_values(['count'], ascending=False)
+# ---------------------
+```
+
+<br/>
+
+
+-----------------------------------------------------
+
+## Python - Variáveis Qualitativas
+
+<hr/>
+
+
+Calculando frequências quando as variáveis são categóricas
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# ---------------------
+dados[["Name","Transmission"]].groupby(['Name', 'Transmission']).size()
+# ---------------------
+```
+
+<br/>
+
+
+-----------------------------------------------------
+
+## Python - Verificando variáveis
+
+<hr/>
+
+
+Antes dos gráficos, vamos verificar quais variáveis são numéricas e quais são categóricas
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+cat_cols = dados.select_dtypes(include=['object']).columns
+num_cols = dados.select_dtypes(include=np.number).columns.tolist()
+print("Variáveis Categóricas: " + str(cat_cols))
+print("Variáveis Numéricas:"+ str(num_cols))
+# -----------------
+```
+
+<br/>
+
+
+-----------------------------------------------------
+
 ## Python - Criação de variáveis
 
 <hr/>
@@ -419,7 +797,7 @@ print("O ano atual é: " + str(date.today().year) )
 # --
 dados['Car_Age'] = date.today().year - dados['Year']
 # --
-dados.head()
+dados[["Name", "Price", "Year", "Car_Age"]]
 # -----------------
 ```
 
@@ -457,50 +835,6 @@ utilizar dois pares de `[]`, ou seja, `df[[colname(s)]]`. O primeiro par retorna
 
 -----------------------------------------------------
 
-## Python - Métricas Estatísticas
-
-<hr/>
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-dados.describe().T
-# -----------------
-```
-
-<br/>
-
-OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como
-*int*, *float*.
-
-
------------------------------------------------------
-
-## Python - Métricas Estatísticas
-
-<hr/>
-
-
-Antes dos gráficos, vamos verificar quais variáveis são numéricas e quais são categóricas
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-cat_cols = dados.select_dtypes(include=['object']).columns
-num_cols = dados.select_dtypes(include=np.number).columns.tolist()
-print("Variáveis Categóricas:")
-print(cat_cols)
-print("Variáveis Numéricas:")
-print(num_cols)
-# -----------------
-```
-
-<br/>
-
-
------------------------------------------------------
 
 ## Python - Gráficos
 
@@ -649,9 +983,9 @@ sns.pairplot(data=dados.drop(['Kilometers_Driven','Price'],axis=1))
 # -----------------
 ```
 
-<br/>
+------------------------------------------------------------------------
 
-## Python - Correlação
+## Python - Gráficos com `Plotly`
 
 <hr/>
 
@@ -659,6 +993,24 @@ sns.pairplot(data=dados.drop(['Kilometers_Driven','Price'],axis=1))
 
 
 ------------------------------------------------------------------------
+
+
+
+
+## Conclusões
+
+<hr/>
+
+#### Alguns resultados que podemos concluir desse estudo:
+
+* abc;
+* def;
+* hig
+
+
+
+------------------------------------------------------------------------
+
 
 ## Referências
 

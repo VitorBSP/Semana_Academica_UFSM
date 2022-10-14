@@ -389,7 +389,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="images/ml_background.png" data-background-opacity="0.2" data-background-size="contain" class="center">
-  <h1 class="title">Análise Exploratória de Dados com python</h1>
+  <h1 class="title">Análise Exploratória de Dados com <code>python</code></h1>
   <p class="author">Jodavid Ferreira</p>
   <p class="institute">UFPB - PPGMDS | HartB Group</p>
 </section>
@@ -557,11 +557,14 @@
 <span id="cb1-2"><a href="#cb1-2"></a><span class="co"># Bibliotecas necessarias para Analise dos Dados</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># Bibliotecas Gráficas</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="im">import</span> scipy <span class="im">as</span> sp</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># -----------------</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># Bibliotecas Gráficas</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># -----------------</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <ul>
@@ -582,7 +585,6 @@
 <span id="cb2-3"><a href="#cb2-3"></a>dados <span class="op">=</span> pd.read_csv(<span class="st">"dataset/used_cars_data.csv"</span>)</span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
 <h3 id="visualizando-um-cabeçalho-dos-dados">Visualizando um <em>cabeçalho</em> dos dados</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># -----------------</span></span>
@@ -644,15 +646,48 @@ memory usage: 793.4+ KB</code></pre>
 <p><br></p>
 <p><img data-src="images/pandas_dtypes.png" class="absolute" style="bottom: 150px; right: 50px; width: 450px; "></p>
 </section>
+<section id="python---tamanho-da-base-de-dados" class="slide level2">
+<h2>Python - Tamanho da base de dados</h2>
+<hr>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># -----------------</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="co"># Visualizando Quantidades de Linhas e colunas</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="bu">len</span>(dados)</span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>7253</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="bu">print</span>(<span class="st">"A quantidade de linhas da base são: "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">len</span>(dados)))</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A quantidade de linhas da base são: 7253</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># -----------------</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="bu">len</span>(dados.columns)</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>14</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="bu">print</span>(<span class="st">"A quantidade de colunas da base são: "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">len</span>(dados.columns)))</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A quantidade de colunas da base são: 14</code></pre>
+</div>
+</div>
+</section>
 <section id="python---dados-únicos-por-variável" class="slide level2">
 <h2>Python - Dados únicos por variável</h2>
 <hr>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># -----------------</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="co"># Checando dados únicos por variável</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>dados.nunique()</span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># -----------------</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="co"># Checando dados únicos por variável</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>dados.nunique()</span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>S.No.                7253
 Name                 2041
@@ -678,10 +713,10 @@ dtype: int64</code></pre>
 <hr>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># -----------------</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="co"># Checando variáveis que possuem dados ausentes</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a>dados.isnull().<span class="bu">sum</span>()</span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># -----------------</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="co"># Checando variáveis que possuem dados ausentes</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>dados.isnull().<span class="bu">sum</span>()</span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>S.No.                   0
 Name                    0
@@ -707,19 +742,19 @@ dtype: int64</code></pre>
 <hr>
 <p>
 </p><div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># -----------------</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="co"># Remover coluna 'S.No.' dos dados</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>dados <span class="op">=</span> dados.drop([<span class="st">'S.No.'</span>], axis <span class="op">=</span> <span class="dv">1</span>)</span>
-<span id="cb12-4"><a href="#cb12-4"></a>dados.info()</span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># -----------------</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="co"># Remover coluna 'S.No.' dos dados</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>dados <span class="op">=</span> dados.drop([<span class="st">'S.No.'</span>], axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb20-4"><a href="#cb20-4"></a>dados.info()</span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>
 </p><div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># -----------------</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="co"># Remover coluna 'S.No.' dos dados</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a>dados <span class="op">=</span> dados.drop(columns <span class="op">=</span> [<span class="st">'S.No.'</span>])</span>
-<span id="cb13-4"><a href="#cb13-4"></a>dados.info()</span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># -----------------</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="co"># Remover coluna 'S.No.' dos dados</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>dados <span class="op">=</span> dados.drop(columns <span class="op">=</span> [<span class="st">'S.No.'</span>])</span>
+<span id="cb21-4"><a href="#cb21-4"></a>dados.info()</span>
+<span id="cb21-5"><a href="#cb21-5"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 7253 entries, 0 to 7252
@@ -745,6 +780,359 @@ memory usage: 736.8+ KB</code></pre>
 </div>
 <p><br></p>
 </section>
+<section id="python---métricas-estatísticas" class="slide level2">
+<h2>Python - Métricas Estatísticas</h2>
+<hr>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># -----------------</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>dados.describe()</span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              Year  Kilometers_Driven        Seats        Price
+count  7253.000000       7.253000e+03  7200.000000  6019.000000
+mean   2013.365366       5.869906e+04     5.279722     9.479468
+std       3.254421       8.442772e+04     0.811660    11.187917
+min    1996.000000       1.710000e+02     0.000000     0.440000
+25%    2011.000000       3.400000e+04     5.000000     3.500000
+50%    2014.000000       5.341600e+04     5.000000     5.640000
+75%    2016.000000       7.300000e+04     5.000000     9.950000
+max    2019.000000       6.500000e+06    10.000000   160.000000</code></pre>
+</div>
+</div>
+<p><br></p>
+<p>OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como <em>int</em>, <em>float</em>.</p>
+</section>
+<section id="python---medidas-de-tend.-central" class="slide level2">
+<h2>Python - Medidas de tend. central</h2>
+<hr>
+<p>
+</p><p>Calculando Média de diferentes formas:</p>
+<h4 id="usando-pandas">Usando Pandas</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># -----------------</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>dados[<span class="st">"Price"</span>].mean()</span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>9.479468350224273</code></pre>
+</div>
+</div>
+<h4 id="usando-numpy">Usando numpy</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># -----------------</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>np.mean(dados[<span class="st">"Price"</span>])</span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>9.479468350224273</code></pre>
+</div>
+</div>
+<h4 id="usando-scipy">Usando scipy</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># -----------------</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>sp.mean(dados[<span class="st">"Price"</span>])</span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>9.479468350224273
+
+&lt;string&gt;:1: DeprecationWarning:
+
+scipy.mean is deprecated and will be removed in SciPy 2.0.0, use numpy.mean instead</code></pre>
+</div>
+</div>
+</section>
+<section id="python---medidas-de-tend.-central-1" class="slide level2">
+<h2>Python - Medidas de tend. central</h2>
+<hr>
+<p>
+</p><p>Calculando Mínimo de diferentes formas:</p>
+<h4 id="usando-pandas-1">Usando Pandas</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># -----------------</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>dados[<span class="st">"Price"</span>].<span class="bu">min</span>()</span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.44</code></pre>
+</div>
+</div>
+<h4 id="usando-numpy-1">Usando numpy</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># -----------------</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>np.<span class="bu">min</span>(dados[<span class="st">"Price"</span>])</span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.44</code></pre>
+</div>
+</div>
+</section>
+<section id="python---medidas-de-tend.-central-2" class="slide level2">
+<h2>Python - Medidas de tend. central</h2>
+<hr>
+<p>
+</p><p>Calculando quantis:</p>
+<h4 id="usando-pandas-2">Usando Pandas</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># -----------------</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>dados[<span class="st">"Price"</span>].quantile()</span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5.64</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># -----------------</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>dados[<span class="st">"Price"</span>].median()</span>
+<span id="cb37-3"><a href="#cb37-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5.64</code></pre>
+</div>
+</div>
+<p>
+</p><h4 id="usando-numpy-2">Usando numpy</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># -----------------</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>np.quantile(dados[<span class="st">"Price"</span>], <span class="fl">0.5</span>)</span>
+<span id="cb39-3"><a href="#cb39-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>nan</code></pre>
+</div>
+</div>
+<p>Porque com <code>numpy</code> retornou <code>nan</code>?</p>
+</section>
+<section id="python---medidas-de-tend.-central-3" class="slide level2">
+<h2>Python - Medidas de tend. central</h2>
+<hr>
+<p>
+</p><p>Calculando quantis:</p>
+<h4 id="corrigindo-numpy">Corrigindo numpy</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># -----------------</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>np.nanquantile(dados[<span class="st">"Price"</span>], <span class="fl">0.5</span>)</span>
+<span id="cb41-3"><a href="#cb41-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5.64</code></pre>
+</div>
+</div>
+<h5 id="considerando-mais-de-um-quantil">considerando mais de um quantil</h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># -----------------</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>np.nanquantile(dados[<span class="st">"Price"</span>], [<span class="dv">0</span>,<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>,<span class="dv">1</span>]) <span class="co">#Numpy</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>array([  0.44,   3.5 ,   5.64,   9.95, 160.  ])</code></pre>
+</div>
+</div>
+<p>
+</p><h4 id="usando-pandas-3">Usando pandas</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># -----------------</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a>dados[<span class="st">"Price"</span>].quantile([<span class="dv">0</span>,<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>,<span class="dv">1</span>]) <span class="co">#Pandas</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.00      0.44
+0.25      3.50
+0.50      5.64
+0.75      9.95
+1.00    160.00
+Name: Price, dtype: float64</code></pre>
+</div>
+</div>
+</section>
+<section id="python---medidas-de-tend.-central-4" class="slide level2">
+<h2>Python - Medidas de tend. central</h2>
+<hr>
+<p><br></p>
+<p>Calculando quantis em mais de uma coluna:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># -----------------</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a><span class="co"># Quantis mais colunas</span></span>
+<span id="cb47-3"><a href="#cb47-3"></a><span class="co"># -----------------</span></span>
+<span id="cb47-4"><a href="#cb47-4"></a>dados[[<span class="st">"Kilometers_Driven"</span>,<span class="st">"Price"</span>]].quantile([<span class="dv">0</span>,<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>,<span class="dv">1</span>]) <span class="co">#Pandas</span></span>
+<span id="cb47-5"><a href="#cb47-5"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Kilometers_Driven   Price
+0.00              171.0    0.44
+0.25            34000.0    3.50
+0.50            53416.0    5.64
+0.75            73000.0    9.95
+1.00          6500000.0  160.00</code></pre>
+</div>
+</div>
+<p>
+</p><p>OBS.: Para não ficar sempre mostrando mais de uma solução, vamos focar no Pandas e seguir com ela até o fim desse minicurso.</p>
+</section>
+<section id="python---medidas-de-dispersão" class="slide level2">
+<h2>Python - Medidas de dispersão</h2>
+<hr>
+<p><br></p>
+<p>Calculando variância entre as variáveis</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># -----------------</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>dados.var()</span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Year                 1.059125e+01
+Kilometers_Driven    7.128040e+09
+Seats                6.587914e-01
+Price                1.251695e+02
+dtype: float64
+
+&lt;string&gt;:1: FutureWarning:
+
+Dropping of nuisance columns in DataFrame reductions (with 'numeric_only=None') is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.</code></pre>
+</div>
+</div>
+<p><br></p>
+<p>OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como <em>int</em>, <em>float</em>.</p>
+</section>
+<section id="python---medidas-de-dispersão-1" class="slide level2">
+<h2>Python - Medidas de dispersão</h2>
+<hr>
+<p><br></p>
+<p>Calculando correlação entre as variáveis</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># -----------------</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a>dados.cov()</span>
+<span id="cb51-3"><a href="#cb51-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                           Year  Kilometers_Driven        Seats         Price
+Year                  10.591255      -5.161682e+04     0.021573     11.169366
+Kilometers_Driven -51616.822165       7.128040e+09  6201.221577 -11735.383472
+Seats                  0.021573       6.201222e+03     0.658791      0.473281
+Price                 11.169366      -1.173538e+04     0.473281    125.169489</code></pre>
+</div>
+</div>
+<p><br></p>
+<p>OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como <em>int</em>, <em>float</em>.</p>
+</section>
+<section id="python---medidas-de-dispersão-2" class="slide level2">
+<h2>Python - Medidas de dispersão</h2>
+<hr>
+<p><br></p>
+<p>Calculando correlação entre as variáveis</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># -----------------</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="co"># Quantis mais colunas</span></span>
+<span id="cb53-3"><a href="#cb53-3"></a><span class="co"># -----------------</span></span>
+<span id="cb53-4"><a href="#cb53-4"></a>dados.corr()</span>
+<span id="cb53-5"><a href="#cb53-5"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                       Year  Kilometers_Driven     Seats     Price
+Year               1.000000          -0.187859  0.008216  0.305327
+Kilometers_Driven -0.187859           1.000000  0.090221 -0.011493
+Seats              0.008216           0.090221  1.000000  0.052225
+Price              0.305327          -0.011493  0.052225  1.000000</code></pre>
+</div>
+</div>
+<p><br></p>
+<p>OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como <em>int</em>, <em>float</em>.</p>
+</section>
+<section id="python---variáveis-qualitativas" class="slide level2">
+<h2>Python - Variáveis Qualitativas</h2>
+<hr>
+<p>Calculando frequências quando as variáveis são categóricas</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># ---------------------</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a>dados[<span class="st">"Name"</span>].value_counts()</span>
+<span id="cb55-3"><a href="#cb55-3"></a><span class="co"># ---------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mahindra XUV500 W8 2WD                  55
+Maruti Swift VDI                        49
+Maruti Swift Dzire VDI                  42
+Honda City 1.5 S MT                     39
+Maruti Swift VDI BSIV                   37
+                                        ..
+Chevrolet Beat LT Option                 1
+Skoda Rapid 1.6 MPI AT Elegance Plus     1
+Ford EcoSport 1.5 TDCi Ambiente          1
+Hyundai i10 Magna 1.1 iTech SE           1
+Hyundai Elite i20 Magna Plus             1
+Name: Name, Length: 2041, dtype: int64</code></pre>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="python---variáveis-qualitativas-1" class="slide level2">
+<h2>Python - Variáveis Qualitativas</h2>
+<hr>
+<p>Calculando frequências quando as variáveis são categóricas</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># ---------------------</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a>dados.groupby([<span class="st">"Name"</span>])[<span class="st">"Name"</span>] <span class="op">\</span></span>
+<span id="cb57-3"><a href="#cb57-3"></a>      .count() <span class="op">\</span></span>
+<span id="cb57-4"><a href="#cb57-4"></a>      .reset_index(name<span class="op">=</span><span class="st">'count'</span>) <span class="op">\</span></span>
+<span id="cb57-5"><a href="#cb57-5"></a>      .sort_values([<span class="st">'count'</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb57-6"><a href="#cb57-6"></a><span class="co"># ---------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                 Name  count
+1017           Mahindra XUV500 W8 2WD     55
+1265                 Maruti Swift VDI     49
+1241           Maruti Swift Dzire VDI     42
+457               Honda City 1.5 S MT     39
+1266            Maruti Swift VDI BSIV     37
+...                               ...    ...
+939             Mahindra NuvoSport N8      1
+937     Mahindra Logan Petrol 1.4 GLE      1
+936     Mahindra Logan Diesel 1.5 DLS      1
+935   Mahindra KUV 100 mFALCON G80 K8      1
+1020          Mahindra Xylo D2 BS III      1
+
+[2041 rows x 2 columns]</code></pre>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="python---variáveis-qualitativas-2" class="slide level2">
+<h2>Python - Variáveis Qualitativas</h2>
+<hr>
+<p>Calculando frequências quando as variáveis são categóricas</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a><span class="co"># ---------------------</span></span>
+<span id="cb59-2"><a href="#cb59-2"></a>dados[[<span class="st">"Name"</span>,<span class="st">"Transmission"</span>]].groupby([<span class="st">'Name'</span>, <span class="st">'Transmission'</span>]).size()</span>
+<span id="cb59-3"><a href="#cb59-3"></a><span class="co"># ---------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Name                            Transmission
+Ambassador Classic Nova Diesel  Manual          1
+Audi A3 35 TDI Attraction       Automatic       2
+Audi A3 35 TDI Premium          Automatic       1
+Audi A3 35 TDI Premium Plus     Automatic       2
+Audi A3 35 TDI Technology       Automatic       1
+                                               ..
+Volvo XC60 D4 Summum            Automatic       1
+Volvo XC60 D5                   Automatic       3
+Volvo XC60 D5 Inscription       Automatic       1
+Volvo XC90 2007-2015 D5 AT AWD  Automatic       1
+Volvo XC90 2007-2015 D5 AWD     Manual          3
+Length: 2041, dtype: int64</code></pre>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="python---verificando-variáveis" class="slide level2">
+<h2>Python - Verificando variáveis</h2>
+<hr>
+<p>Antes dos gráficos, vamos verificar quais variáveis são numéricas e quais são categóricas</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a><span class="co"># -----------------</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a>cat_cols <span class="op">=</span> dados.select_dtypes(include<span class="op">=</span>[<span class="st">'object'</span>]).columns</span>
+<span id="cb61-3"><a href="#cb61-3"></a>num_cols <span class="op">=</span> dados.select_dtypes(include<span class="op">=</span>np.number).columns.tolist()</span>
+<span id="cb61-4"><a href="#cb61-4"></a><span class="bu">print</span>(<span class="st">"Variáveis Categóricas: "</span> <span class="op">+</span> <span class="bu">str</span>(cat_cols))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Variáveis Categóricas: Index(['Name', 'Location', 'Fuel_Type', 'Transmission', 'Owner_Type',
+       'Mileage', 'Engine', 'Power', 'New_Price'],
+      dtype='object')</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a><span class="bu">print</span>(<span class="st">"Variáveis Numéricas:"</span><span class="op">+</span> <span class="bu">str</span>(num_cols))</span>
+<span id="cb63-2"><a href="#cb63-2"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Variáveis Numéricas:['Year', 'Kilometers_Driven', 'Seats', 'Price']</code></pre>
+</div>
+</div>
+<p><br></p>
+</section>
 <section id="python---criação-de-variáveis" class="slide level2">
 <h2>Python - Criação de variáveis</h2>
 <hr>
@@ -753,28 +1141,34 @@ memory usage: 736.8+ KB</code></pre>
 -->
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># -----------------</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="co"># Criação da variável 'Car_Age'como uma novas variável</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="im">from</span> datetime <span class="im">import</span> date</span>
-<span id="cb15-4"><a href="#cb15-4"></a><span class="co"># ---</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a><span class="bu">print</span>(<span class="st">"O ano atual é: "</span> <span class="op">+</span> <span class="bu">str</span>(date.today().year) )</span>
-<span id="cb15-6"><a href="#cb15-6"></a><span class="co"># --</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a><span class="co"># -----------------</span></span>
+<span id="cb65-2"><a href="#cb65-2"></a><span class="co"># Criação da variável 'Car_Age'como uma novas variável</span></span>
+<span id="cb65-3"><a href="#cb65-3"></a><span class="im">from</span> datetime <span class="im">import</span> date</span>
+<span id="cb65-4"><a href="#cb65-4"></a><span class="co"># ---</span></span>
+<span id="cb65-5"><a href="#cb65-5"></a><span class="bu">print</span>(<span class="st">"O ano atual é: "</span> <span class="op">+</span> <span class="bu">str</span>(date.today().year) )</span>
+<span id="cb65-6"><a href="#cb65-6"></a><span class="co"># --</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>O ano atual é: 2022</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>dados[<span class="st">'Car_Age'</span>] <span class="op">=</span> date.today().year <span class="op">-</span> dados[<span class="st">'Year'</span>]</span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="co"># --</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a>dados.head()</span>
-<span id="cb17-4"><a href="#cb17-4"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1"></a>dados[<span class="st">'Car_Age'</span>] <span class="op">=</span> date.today().year <span class="op">-</span> dados[<span class="st">'Year'</span>]</span>
+<span id="cb67-2"><a href="#cb67-2"></a><span class="co"># --</span></span>
+<span id="cb67-3"><a href="#cb67-3"></a>dados[[<span class="st">"Name"</span>, <span class="st">"Price"</span>, <span class="st">"Year"</span>, <span class="st">"Car_Age"</span>]]</span>
+<span id="cb67-4"><a href="#cb67-4"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                               Name    Location  ...  Price  Car_Age
-0            Maruti Wagon R LXI CNG      Mumbai  ...   1.75       12
-1  Hyundai Creta 1.6 CRDi SX Option        Pune  ...  12.50        7
-2                      Honda Jazz V     Chennai  ...   4.50       11
-3                 Maruti Ertiga VDI     Chennai  ...   6.00       10
-4   Audi A4 New 2.0 TDI Multitronic  Coimbatore  ...  17.74        9
+<pre><code>                                                   Name  Price  Year  Car_Age
+0                                Maruti Wagon R LXI CNG   1.75  2010       12
+1                      Hyundai Creta 1.6 CRDi SX Option  12.50  2015        7
+2                                          Honda Jazz V   4.50  2011       11
+3                                     Maruti Ertiga VDI   6.00  2012       10
+4                       Audi A4 New 2.0 TDI Multitronic  17.74  2013        9
+...                                                 ...    ...   ...      ...
+7248                  Volkswagen Vento Diesel Trendline    NaN  2011       11
+7249                             Volkswagen Polo GT TSI    NaN  2015        7
+7250                             Nissan Micra Diesel XV    NaN  2012       10
+7251                             Volkswagen Polo GT TSI    NaN  2013        9
+7252  Mercedes-Benz E-Class 2009-2013 E 220 CDI Avan...    NaN  2014        8
 
-[5 rows x 14 columns]</code></pre>
+[7253 rows x 4 columns]</code></pre>
 </div>
 </div>
 <p><br></p>
@@ -787,14 +1181,14 @@ memory usage: 736.8+ KB</code></pre>
 -->
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># -----------------</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="co"># Criação da variável 'Marca' do carro</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="co"># str.split: quebra as strings</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="co"># str.get(0): pega todas as posições 0 de cada lista criada da linha</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a>dados[<span class="st">'Marca'</span>] <span class="op">=</span> dados.Name.<span class="bu">str</span>.split().<span class="bu">str</span>.get(<span class="dv">0</span>)</span>
-<span id="cb19-6"><a href="#cb19-6"></a><span class="co"># --</span></span>
-<span id="cb19-7"><a href="#cb19-7"></a>dados[[<span class="st">'Name'</span>,<span class="st">'Marca'</span>]].head()</span>
-<span id="cb19-8"><a href="#cb19-8"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1"></a><span class="co"># -----------------</span></span>
+<span id="cb69-2"><a href="#cb69-2"></a><span class="co"># Criação da variável 'Marca' do carro</span></span>
+<span id="cb69-3"><a href="#cb69-3"></a><span class="co"># str.split: quebra as strings</span></span>
+<span id="cb69-4"><a href="#cb69-4"></a><span class="co"># str.get(0): pega todas as posições 0 de cada lista criada da linha</span></span>
+<span id="cb69-5"><a href="#cb69-5"></a>dados[<span class="st">'Marca'</span>] <span class="op">=</span> dados.Name.<span class="bu">str</span>.split().<span class="bu">str</span>.get(<span class="dv">0</span>)</span>
+<span id="cb69-6"><a href="#cb69-6"></a><span class="co"># --</span></span>
+<span id="cb69-7"><a href="#cb69-7"></a>dados[[<span class="st">'Name'</span>,<span class="st">'Marca'</span>]].head()</span>
+<span id="cb69-8"><a href="#cb69-8"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                               Name    Marca
 0            Maruti Wagon R LXI CNG   Maruti
@@ -807,59 +1201,6 @@ memory usage: 736.8+ KB</code></pre>
 <p><br></p>
 <p>OBS.: Para retornar data.frames com duas ou mais colunas selecionadas, é necessário utilizar dois pares de <code>[]</code>, ou seja, <code>df[[colname(s)]]</code>. O primeiro par retorna uma série, enquanto os colchetes duplos retornam um dataframe.</p>
 </section>
-<section id="python---métricas-estatísticas" class="slide level2">
-<h2>Python - Métricas Estatísticas</h2>
-<hr>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># -----------------</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>dados.describe().T</span>
-<span id="cb21-3"><a href="#cb21-3"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                    count          mean  ...       75%        max
-Year               7253.0   2013.365366  ...   2016.00     2019.0
-Kilometers_Driven  7253.0  58699.063146  ...  73000.00  6500000.0
-Seats              7200.0      5.279722  ...      5.00       10.0
-Price              6019.0      9.479468  ...      9.95      160.0
-Car_Age            7253.0      8.634634  ...     11.00       26.0
-
-[5 rows x 8 columns]</code></pre>
-</div>
-</div>
-<p><br></p>
-<p>OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como <em>int</em>, <em>float</em>.</p>
-</section>
-<section id="python---métricas-estatísticas-1" class="slide level2">
-<h2>Python - Métricas Estatísticas</h2>
-<hr>
-<p>Antes dos gráficos, vamos verificar quais variáveis são numéricas e quais são categóricas</p>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># -----------------</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>cat_cols <span class="op">=</span> dados.select_dtypes(include<span class="op">=</span>[<span class="st">'object'</span>]).columns</span>
-<span id="cb23-3"><a href="#cb23-3"></a>num_cols <span class="op">=</span> dados.select_dtypes(include<span class="op">=</span>np.number).columns.tolist()</span>
-<span id="cb23-4"><a href="#cb23-4"></a><span class="bu">print</span>(<span class="st">"Variáveis Categóricas:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Variáveis Categóricas:</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="bu">print</span>(cat_cols)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Index(['Name', 'Location', 'Fuel_Type', 'Transmission', 'Owner_Type',
-       'Mileage', 'Engine', 'Power', 'New_Price', 'Marca'],
-      dtype='object')</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="bu">print</span>(<span class="st">"Variáveis Numéricas:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Variáveis Numéricas:</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="bu">print</span>(num_cols)</span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['Year', 'Kilometers_Driven', 'Seats', 'Price', 'Car_Age']</code></pre>
-</div>
-</div>
-<p><br></p>
-</section>
 <section id="python---gráficos" class="slide level2">
 <h2>Python - Gráficos</h2>
 <hr>
@@ -867,18 +1208,18 @@ Car_Age            7253.0      8.634634  ...     11.00       26.0
 <p>Antes dos gráficos, vamos verificar quais variáveis são numéricas e quais são categóricas</p>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># -----------------</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="cf">for</span> col <span class="kw">in</span> num_cols:</span>
-<span id="cb31-3"><a href="#cb31-3"></a>    <span class="bu">print</span>(col)</span>
-<span id="cb31-4"><a href="#cb31-4"></a>    <span class="bu">print</span>(<span class="st">'Assimetria :'</span>, <span class="bu">round</span>(dados[col].skew(), <span class="dv">2</span>))</span>
-<span id="cb31-5"><a href="#cb31-5"></a>    plt.figure(figsize <span class="op">=</span> (<span class="dv">15</span>, <span class="dv">4</span>))</span>
-<span id="cb31-6"><a href="#cb31-6"></a>    plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb31-7"><a href="#cb31-7"></a>    dados[col].hist(grid<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb31-8"><a href="#cb31-8"></a>    plt.ylabel(<span class="st">'Frequência'</span>)</span>
-<span id="cb31-9"><a href="#cb31-9"></a>    plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb31-10"><a href="#cb31-10"></a>    sns.boxplot(x<span class="op">=</span>dados[col])</span>
-<span id="cb31-11"><a href="#cb31-11"></a>    plt.show()</span>
-<span id="cb31-12"><a href="#cb31-12"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a><span class="co"># -----------------</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a><span class="cf">for</span> col <span class="kw">in</span> num_cols:</span>
+<span id="cb71-3"><a href="#cb71-3"></a>    <span class="bu">print</span>(col)</span>
+<span id="cb71-4"><a href="#cb71-4"></a>    <span class="bu">print</span>(<span class="st">'Assimetria :'</span>, <span class="bu">round</span>(dados[col].skew(), <span class="dv">2</span>))</span>
+<span id="cb71-5"><a href="#cb71-5"></a>    plt.figure(figsize <span class="op">=</span> (<span class="dv">15</span>, <span class="dv">4</span>))</span>
+<span id="cb71-6"><a href="#cb71-6"></a>    plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb71-7"><a href="#cb71-7"></a>    dados[col].hist(grid<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb71-8"><a href="#cb71-8"></a>    plt.ylabel(<span class="st">'Frequência'</span>)</span>
+<span id="cb71-9"><a href="#cb71-9"></a>    plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb71-10"><a href="#cb71-10"></a>    sns.boxplot(x<span class="op">=</span>dados[col])</span>
+<span id="cb71-11"><a href="#cb71-11"></a>    plt.show()</span>
+<span id="cb71-12"><a href="#cb71-12"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="python---gráficos-1" class="slide level2">
@@ -894,30 +1235,30 @@ Car_Age            7253.0      8.634634  ...     11.00       26.0
 </div>
 
 </div>
-<img data-src="Semana_Academica_UFPR_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"><p><br></p>
+<img data-src="Semana_Academica_UFPR_files/figure-revealjs/unnamed-chunk-36-1.png" width="960" class="r-stretch"><p><br></p>
 </section>
 <section id="python---gráficos-2" class="slide level2">
 <h2>Python - Gráficos</h2>
 <hr>
 <h4 id="gráficos-de-barras">Gráficos de Barras</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># -----------------</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">18</span>, <span class="dv">18</span>))</span>
-<span id="cb34-3"><a href="#cb34-3"></a>fig.suptitle(<span class="st">'Gráficos de Barras para todas as variáveis categóricas da base de dados'</span>)</span>
-<span id="cb34-4"><a href="#cb34-4"></a>sns.countplot(ax <span class="op">=</span> axes[<span class="dv">0</span>, <span class="dv">0</span>], x <span class="op">=</span> <span class="st">'Fuel_Type'</span>, data <span class="op">=</span> dados, color <span class="op">=</span> <span class="st">'blue'</span>, </span>
-<span id="cb34-5"><a href="#cb34-5"></a>              order <span class="op">=</span> dados[<span class="st">'Fuel_Type'</span>].value_counts().index)<span class="op">;</span></span>
-<span id="cb34-6"><a href="#cb34-6"></a>sns.countplot(ax <span class="op">=</span> axes[<span class="dv">0</span>, <span class="dv">1</span>], x <span class="op">=</span> <span class="st">'Transmission'</span>, data <span class="op">=</span> dados, color <span class="op">=</span> <span class="st">'blue'</span>, </span>
-<span id="cb34-7"><a href="#cb34-7"></a>              order <span class="op">=</span> dados[<span class="st">'Transmission'</span>].value_counts().index)<span class="op">;</span></span>
-<span id="cb34-8"><a href="#cb34-8"></a>sns.countplot(ax <span class="op">=</span> axes[<span class="dv">1</span>, <span class="dv">0</span>], x <span class="op">=</span> <span class="st">'Owner_Type'</span>, data <span class="op">=</span> dados, color <span class="op">=</span> <span class="st">'blue'</span>, </span>
-<span id="cb34-9"><a href="#cb34-9"></a>              order <span class="op">=</span> dados[<span class="st">'Owner_Type'</span>].value_counts().index)<span class="op">;</span></span>
-<span id="cb34-10"><a href="#cb34-10"></a>sns.countplot(ax <span class="op">=</span> axes[<span class="dv">1</span>, <span class="dv">1</span>], x <span class="op">=</span> <span class="st">'Location'</span>, data <span class="op">=</span> dados, color <span class="op">=</span> <span class="st">'blue'</span>, </span>
-<span id="cb34-11"><a href="#cb34-11"></a>              order <span class="op">=</span> dados[<span class="st">'Location'</span>].value_counts().index)<span class="op">;</span></span>
-<span id="cb34-12"><a href="#cb34-12"></a>sns.countplot(ax <span class="op">=</span> axes[<span class="dv">2</span>, <span class="dv">0</span>], x <span class="op">=</span> <span class="st">'Marca'</span>, data <span class="op">=</span> dados, color <span class="op">=</span> <span class="st">'blue'</span>, </span>
-<span id="cb34-13"><a href="#cb34-13"></a>              order <span class="op">=</span> dados[<span class="st">'Marca'</span>].head(<span class="dv">20</span>).value_counts().index)<span class="op">;</span></span>
-<span id="cb34-14"><a href="#cb34-14"></a>axes[<span class="dv">1</span>][<span class="dv">1</span>].tick_params(labelrotation<span class="op">=</span><span class="dv">45</span>)<span class="op">;</span></span>
-<span id="cb34-15"><a href="#cb34-15"></a>axes[<span class="dv">2</span>][<span class="dv">0</span>].tick_params(labelrotation<span class="op">=</span><span class="dv">90</span>)<span class="op">;</span></span>
-<span id="cb34-16"><a href="#cb34-16"></a>axes[<span class="dv">2</span>][<span class="dv">1</span>].tick_params(labelrotation<span class="op">=</span><span class="dv">90</span>)<span class="op">;</span></span>
-<span id="cb34-17"><a href="#cb34-17"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a><span class="co"># -----------------</span></span>
+<span id="cb74-2"><a href="#cb74-2"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">18</span>, <span class="dv">18</span>))</span>
+<span id="cb74-3"><a href="#cb74-3"></a>fig.suptitle(<span class="st">'Gráficos de Barras para todas as variáveis categóricas da base de dados'</span>)</span>
+<span id="cb74-4"><a href="#cb74-4"></a>sns.countplot(ax <span class="op">=</span> axes[<span class="dv">0</span>, <span class="dv">0</span>], x <span class="op">=</span> <span class="st">'Fuel_Type'</span>, data <span class="op">=</span> dados, color <span class="op">=</span> <span class="st">'blue'</span>, </span>
+<span id="cb74-5"><a href="#cb74-5"></a>              order <span class="op">=</span> dados[<span class="st">'Fuel_Type'</span>].value_counts().index)<span class="op">;</span></span>
+<span id="cb74-6"><a href="#cb74-6"></a>sns.countplot(ax <span class="op">=</span> axes[<span class="dv">0</span>, <span class="dv">1</span>], x <span class="op">=</span> <span class="st">'Transmission'</span>, data <span class="op">=</span> dados, color <span class="op">=</span> <span class="st">'blue'</span>, </span>
+<span id="cb74-7"><a href="#cb74-7"></a>              order <span class="op">=</span> dados[<span class="st">'Transmission'</span>].value_counts().index)<span class="op">;</span></span>
+<span id="cb74-8"><a href="#cb74-8"></a>sns.countplot(ax <span class="op">=</span> axes[<span class="dv">1</span>, <span class="dv">0</span>], x <span class="op">=</span> <span class="st">'Owner_Type'</span>, data <span class="op">=</span> dados, color <span class="op">=</span> <span class="st">'blue'</span>, </span>
+<span id="cb74-9"><a href="#cb74-9"></a>              order <span class="op">=</span> dados[<span class="st">'Owner_Type'</span>].value_counts().index)<span class="op">;</span></span>
+<span id="cb74-10"><a href="#cb74-10"></a>sns.countplot(ax <span class="op">=</span> axes[<span class="dv">1</span>, <span class="dv">1</span>], x <span class="op">=</span> <span class="st">'Location'</span>, data <span class="op">=</span> dados, color <span class="op">=</span> <span class="st">'blue'</span>, </span>
+<span id="cb74-11"><a href="#cb74-11"></a>              order <span class="op">=</span> dados[<span class="st">'Location'</span>].value_counts().index)<span class="op">;</span></span>
+<span id="cb74-12"><a href="#cb74-12"></a>sns.countplot(ax <span class="op">=</span> axes[<span class="dv">2</span>, <span class="dv">0</span>], x <span class="op">=</span> <span class="st">'Marca'</span>, data <span class="op">=</span> dados, color <span class="op">=</span> <span class="st">'blue'</span>, </span>
+<span id="cb74-13"><a href="#cb74-13"></a>              order <span class="op">=</span> dados[<span class="st">'Marca'</span>].head(<span class="dv">20</span>).value_counts().index)<span class="op">;</span></span>
+<span id="cb74-14"><a href="#cb74-14"></a>axes[<span class="dv">1</span>][<span class="dv">1</span>].tick_params(labelrotation<span class="op">=</span><span class="dv">45</span>)<span class="op">;</span></span>
+<span id="cb74-15"><a href="#cb74-15"></a>axes[<span class="dv">2</span>][<span class="dv">0</span>].tick_params(labelrotation<span class="op">=</span><span class="dv">90</span>)<span class="op">;</span></span>
+<span id="cb74-16"><a href="#cb74-16"></a>axes[<span class="dv">2</span>][<span class="dv">1</span>].tick_params(labelrotation<span class="op">=</span><span class="dv">90</span>)<span class="op">;</span></span>
+<span id="cb74-17"><a href="#cb74-17"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 </section>
@@ -935,25 +1276,34 @@ Car_Age            7253.0      8.634634  ...     11.00       26.0
 <hr>
 <h4 id="gráficos-bivariados">Gráficos Bivariados</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># -----------------</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">13</span>,<span class="dv">17</span>))</span>
-<span id="cb35-3"><a href="#cb35-3"></a>sns.pairplot(data<span class="op">=</span>dados.drop([<span class="st">'Kilometers_Driven'</span>,<span class="st">'Price'</span>],axis<span class="op">=</span><span class="dv">1</span>))</span>
-<span id="cb35-4"><a href="#cb35-4"></a><span class="co">#plt.show()</span></span>
-<span id="cb35-5"><a href="#cb35-5"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a><span class="co"># -----------------</span></span>
+<span id="cb75-2"><a href="#cb75-2"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">13</span>,<span class="dv">17</span>))</span>
+<span id="cb75-3"><a href="#cb75-3"></a>sns.pairplot(data<span class="op">=</span>dados.drop([<span class="st">'Kilometers_Driven'</span>,<span class="st">'Price'</span>],axis<span class="op">=</span><span class="dv">1</span>))</span>
+<span id="cb75-4"><a href="#cb75-4"></a><span class="co">#plt.show()</span></span>
+<span id="cb75-5"><a href="#cb75-5"></a><span class="co"># -----------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="Semana_Academica_UFPR_files/figure-revealjs/unnamed-chunk-19-3.png" width="370" class="r-stretch"><p><br></p>
+<img data-src="Semana_Academica_UFPR_files/figure-revealjs/unnamed-chunk-39-3.png" width="370" class="r-stretch"><p><br></p>
 </section>
 <section id="python---gráficos-5" class="slide level2">
 <h2>Python - Gráficos</h2>
 <hr>
 <h4 id="gráficos-bivariados-1">Gráficos Bivariados</h4>
 
-<img data-src="Semana_Academica_UFPR_files/figure-revealjs/unnamed-chunk-20-5.png" width="370" class="r-stretch"><p><br></p>
-</section>
-<section id="python---correlação" class="slide level2">
-<h2>Python - Correlação</h2>
+<img data-src="Semana_Academica_UFPR_files/figure-revealjs/unnamed-chunk-40-5.png" width="370" class="r-stretch"></section>
+<section id="python---gráficos-com-plotly" class="slide level2">
+<h2>Python - Gráficos com <code>Plotly</code></h2>
 <hr>
+</section>
+<section id="conclusões" class="slide level2">
+<h2>Conclusões</h2>
+<hr>
+<h4 id="alguns-resultados-que-podemos-concluir-desse-estudo">Alguns resultados que podemos concluir desse estudo:</h4>
+<ul>
+<li>abc;</li>
+<li>def;</li>
+<li>hig</li>
+</ul>
 </section>
 <section id="referências" class="slide level2">
 <h2>Referências</h2>
