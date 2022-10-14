@@ -1,0 +1,709 @@
+---
+title: "Análise Exploratória de Dados com python"
+subtitle: "  "
+author: "Jodavid Ferreira"
+institute: "UFPB - PPGMDS | HartB Group"
+title-slide-attributes:
+  data-background-image: images/ml_background.png
+  data-background-size: contain
+  data-background-opacity: "0.2"
+format:
+  revealjs:
+    slide-number: c/t
+    css: ["theme/theme.css"]
+    theme: default #dark
+    footer: "Análise Exploratória de Dados com Python - SEMANA ACADÊMICA UFPR - [Jodavid Ferreira](https://jodavid.github.io/)"
+    logo: "images/logo.png"
+    smaller: True
+editor_options: 
+  chunk_output_type: inline
+---
+
+## Introdução
+
+<hr/>
+
+![Fluxograma do processo de ciência de dados de Doing Data Science, de Schutt & O'Neil (2013)](images/EDA.png){fig-align="center" width="900"}
+
+------------------------------------------------------------------------
+
+## O que é Análise Exploratória de Dados?
+
+<hr/>
+
+<br/>
+
+-   A Análise Exploratória de Dados não é um processo com um conjunto de regras rígidas;
+
+<p>
+
+-   Mais do que qualquer coisa é um estado de espírito;
+
+<p>
+
+-   Você deve sentir-se livre para investigar cada ideia que lhe venha a mente, considerando fazer sentido a problemática em estudo;
+    -   Algumas darão resultados;
+    -   Outras particularmente não levarão a lugar nenhum;
+
+<!--
+<p>
+
+-   Mas com sua exploração, você provavelmente será direcionado para resultados produtivos, que por fim, será o que vai ser comunicado aos outros;
+
+-->
+
+
+![](images/predictive-analytics-computer-icons-data-analysis-business-intelligence-statistical-information-analysis-59d1882286ede637d0ff63e9ac65936c.png){.absolute bottom=0 right=50 width="300"}
+
+
+------------------------------------------------------------------------
+
+
+## Análise Exploratória de Dados
+
+<hr/>
+
+<!--
+![](images/image%20(3).png){.absolute top=100 right=50 border-radius= 10 width="250"}
+-->
+<img src="images/image%20(3).png" style="border-radius: 10px; top: 100px; right: 50px; position: absolute; width: 250px; height:120px;"/>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+* Não há regras sobre quais perguntas você deve fazer para guiar sua pesquisa.
+
+<br/>
+
+* Mas existe dois entendimentos essências para uma boa Análise Exploratória:
+
+<br/>
+
+<hr/>
+
+### Compreensão da problemática e  {style="text-align:center"}
+
+### Compreensão do contexto {style="text-align:center"}
+
+<hr/>
+
+<br/>
+
+------------------------------------------------------------------------
+
+## Análise Exploratória de Dados
+
+<hr/>
+
+<br/>
+
+### *Compreensão da Problemática* {style="text-align:center"}
+
+<br/> <br/>
+
+-   É preciso ter uma visão clara do problema de negócio a ser resolvido.
+
+![](images/crisp.png){fig-align="center" width="600"}
+
+------------------------------------------------------------------------
+
+## Análise Exploratória de Dados
+
+<hr/>
+
+<br/>
+
+### *Compreensão do Contexto* {style="text-align:center"}
+
+<img src="images/contexto.jpg" style="border-radius: 10px; top: 250px; right: 200px; position: absolute; width: 300px; height:157px;"/>
+
+<br/> <br/>
+
+-   Quem é seu público?
+
+<br/>
+
+-   O que você precisa que ele saiba?
+
+<br/>
+
+Compreender os dados e descobrir o que pode ser digno de nota ou interessante a destacar para outras pessoas.
+
+------------------------------------------------------------------------
+
+## Análise Exploratória de Dados
+
+<hr/>
+
+<br/>
+
+> Vamos agora tentar assimiliar o que foi entendido até o momento com uma visão em termos quantitativos e estatístico
+
+<br/>
+
+Podemos pensar em iniciar nossa AED por esses dois caminhos:
+
+<br/>
+
+1.  Que tipo de variação ocorre dentro de minhas `variáveis`?
+2.  Que tipo de covariação ocorre entre minhas `variáveis`?
+
+------------------------------------------------------------------------
+
+## O que geralmente é utilizada na AED
+
+<hr/>
+
+<br/>
+
+-   Medidas de tendência central;
+-   Medidas de dispersão;
+-   Análise Gráfica;
+-   Análise de correlação (quando seja possível sua utilização);
+-   Alguns possíveis testes de associação;
+
+<br/>
+
+Através destes pontos, é possível extrair informações interessantes sobre os dados em estudo.
+
+------------------------------------------------------------------------
+
+## Dados Tabulados (*Tidy Data*)
+
+<hr/>
+
+<br/> <br/>
+
+### Reflexão: 
+
+<hr/>
+
+<br/>
+
+#### Conjuntos de dados arrumados são todos iguais, mas cada conjunto de dados bagunçado, é bagunçado de sua própria maneira.
+
+*- Hadley Wickham*
+
+<br/>
+
+<hr/>
+
+## Dados Tabulados (*Tidy Data*)
+
+<hr/>
+
+<br/> Há três regras inter-relacionadas que tornam um conjunto de dados arrumados (*tidy*):
+
+1.  Cada `variável` deve ter sua própria coluna.
+
+2.  Cada `observação` deve ter sua própria linha.
+
+3.  Cada `valor` deve ter sua própria célula.
+
+![](images/tidy_data_01.png){fig-align="center" width="400"}
+
+------------------------------------------------------------------------
+
+<br/> <br/> <br/> <br/> <br/>
+
+<h1 style="text-align: center;">
+
+Vamos ao python?
+
+</h1>
+
+------------------------------------------------------------------------
+
+## Python - Base de dados
+
+<hr/>
+
+<br/> 
+
+DataSet utilizado: `used_cars_data.csv`
+
+<br/> 
+link: [https://www.kaggle.com/datasets/sukhmanibedi/cars4u](https://www.kaggle.com/datasets/sukhmanibedi/cars4u)
+
+<br/> 
+
+> Com este conjunto de dados vamos utilizar EDA para entender os dados referentes a carros usados e tentar identificar fatores que influenciam o preço do carro.
+
+<br/> 
+Após a AED, um objetivo poderia ser 'prever o preço do carro usado estão sendo usados como exemplo'.
+
+
+------------------------------------------------------------------------
+
+## Python - Importação das Bibliotecas
+
+<hr/>
+
+<br/>
+
+O primeiro passo nesse caso é importar bibliotecas necessárias para análise:
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Bibliotecas necessarias para Analise dos Dados
+import pandas as pd
+import numpy as np
+
+# Bibliotecas Gráficas
+import matplotlib.pyplot as plt
+import seaborn as sns
+# -----------------
+
+```
+
+<br/>
+
+
+* Biblioteca Pandas: [https://pandas.pydata.org/](https://pandas.pydata.org/)
+* Biblioteca Numpy: [https://numpy.org/](https://numpy.org/)
+
+<br/>
+
+
+```{r, eval = T, echo=TRUE}
+```
+
+
+------------------------------------------------------------------------
+
+## Python - Lendo base de dados
+
+<hr/>
+
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Lendo a Base de dados
+dados = pd.read_csv("dataset/used_cars_data.csv")
+# -----------------
+```
+
+<br/>
+
+
+### Visualizando um *cabeçalho* dos dados
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Visualizando um cabeçalho dos dados
+dados.head()
+# -----------------
+```
+
+<br/>
+
+```{python, eval = F, echo=T}
+# -----------------
+# Visualizando os últimos dados
+dados.tail()
+# -----------------
+```
+
+
+------------------------------------------------------------------------
+
+## Python - Tipos das variáveis
+
+<hr/>
+
+<br/>
+
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Visualizando Informações das colunas
+dados.info()
+# -----------------
+```
+
+<br/>
+
+![](images/pandas_dtypes.png){.absolute bottom=150 right=50 width="450"}
+
+
+
+
+-----------------------------------------------------
+
+## Python - Dados únicos por variável
+
+<hr/>
+
+<br/>
+
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Checando dados únicos por variável
+dados.nunique()
+# -----------------
+```
+
+<br/>
+
+
+-----------------------------------------------------
+
+## Python - Valores nulos nas colunas
+
+<hr/>
+
+<br/>
+
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Checando variáveis que possuem dados ausentes
+dados.isnull().sum()
+# -----------------
+```
+
+<br/>
+
+
+-----------------------------------------------------
+
+## Python - Removendo colunas
+
+<hr/>
+
+<p/>
+
+```{python, eval = F, echo=TRUE}
+# -----------------
+# Remover coluna 'S.No.' dos dados
+dados = dados.drop(['S.No.'], axis = 1)
+dados.info()
+# -----------------
+```
+
+<p/>
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Remover coluna 'S.No.' dos dados
+dados = dados.drop(columns = ['S.No.'])
+dados.info()
+# -----------------
+```
+
+<br/>
+
+
+-----------------------------------------------------
+
+## Python - Criação de variáveis
+
+<hr/>
+
+<!--
+### Feature Engineering - Criação de variáveis
+-->
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Criação da variável 'Car_Age'como uma novas variável
+from datetime import date
+# ---
+print("O ano atual é: " + str(date.today().year) )
+# --
+dados['Car_Age'] = date.today().year - dados['Year']
+# --
+dados.head()
+# -----------------
+```
+
+<br/>
+
+
+-----------------------------------------------------
+
+## Python - Criação de variáveis
+
+<hr/>
+
+<!--
+### Feature Engineering - Criação de variáveis
+-->
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Criação da variável 'Marca' do carro
+# str.split: quebra as strings
+# str.get(0): pega todas as posições 0 de cada lista criada da linha
+dados['Marca'] = dados.Name.str.split().str.get(0)
+# --
+dados[['Name','Marca']].head()
+# -----------------
+```
+
+<br/>
+
+OBS.: Para retornar data.frames com duas ou mais colunas selecionadas, é necessário
+utilizar dois pares de `[]`, ou seja, `df[[colname(s)]]`. O primeiro par retorna uma série, enquanto os colchetes duplos retornam um dataframe.
+
+
+-----------------------------------------------------
+
+## Python - Métricas Estatísticas
+
+<hr/>
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+dados.describe().T
+# -----------------
+```
+
+<br/>
+
+OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como
+*int*, *float*.
+
+
+-----------------------------------------------------
+
+## Python - Métricas Estatísticas
+
+<hr/>
+
+
+Antes dos gráficos, vamos verificar quais variáveis são numéricas e quais são categóricas
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+cat_cols = dados.select_dtypes(include=['object']).columns
+num_cols = dados.select_dtypes(include=np.number).columns.tolist()
+print("Variáveis Categóricas:")
+print(cat_cols)
+print("Variáveis Numéricas:")
+print(num_cols)
+# -----------------
+```
+
+<br/>
+
+
+-----------------------------------------------------
+
+## Python - Gráficos
+
+<hr/>
+
+#### Histogramas e BoxPlot
+
+Antes dos gráficos, vamos verificar quais variáveis são numéricas e quais são categóricas
+
+<br/>
+
+```{python, eval = F, echo=TRUE}
+# -----------------
+for col in num_cols:
+    print(col)
+    print('Assimetria :', round(dados[col].skew(), 2))
+    plt.figure(figsize = (15, 4))
+    plt.subplot(1, 2, 1)
+    dados[col].hist(grid=False)
+    plt.ylabel('Frequência')
+    plt.subplot(1, 2, 2)
+    sns.boxplot(x=dados[col])
+    plt.show()
+# -----------------
+```
+
+-----------------------------------------------------
+
+
+## Python - Gráficos
+
+<hr/>
+
+#### Histogramas e BoxPlot
+
+
+```{python, eval = T, echo=F}
+# -----------------
+col = num_cols[0]
+print(col)
+print('Assimetria :', round(dados[col].skew(), 2))
+plt.figure(figsize = (10, 4))
+plt.subplot(1, 2, 1)
+dados[col].hist(grid=False)
+plt.ylabel('Frequência')
+plt.subplot(1, 2, 2)
+sns.boxplot(x=dados[col])
+plt.show()
+# -----------------
+```
+
+<br/>
+
+-----------------------------------------------------
+
+
+## Python - Gráficos
+
+<hr/>
+
+#### Gráficos de Barras
+
+
+```{python, eval = F, echo=T}
+# -----------------
+fig, axes = plt.subplots(3, 2, figsize = (18, 18))
+fig.suptitle('Gráficos de Barras para todas as variáveis categóricas da base de dados')
+sns.countplot(ax = axes[0, 0], x = 'Fuel_Type', data = dados, color = 'blue', 
+              order = dados['Fuel_Type'].value_counts().index);
+sns.countplot(ax = axes[0, 1], x = 'Transmission', data = dados, color = 'blue', 
+              order = dados['Transmission'].value_counts().index);
+sns.countplot(ax = axes[1, 0], x = 'Owner_Type', data = dados, color = 'blue', 
+              order = dados['Owner_Type'].value_counts().index);
+sns.countplot(ax = axes[1, 1], x = 'Location', data = dados, color = 'blue', 
+              order = dados['Location'].value_counts().index);
+sns.countplot(ax = axes[2, 0], x = 'Marca', data = dados, color = 'blue', 
+              order = dados['Marca'].head(20).value_counts().index);
+axes[1][1].tick_params(labelrotation=45);
+axes[2][0].tick_params(labelrotation=90);
+axes[2][1].tick_params(labelrotation=90);
+# -----------------
+```
+
+<br/>
+
+
+-----------------------------------------------------
+
+
+## Python - Gráficos
+
+<hr/>
+
+#### Gráficos de Barras
+
+
+```{python, eval = T, echo=F}
+# -----------------
+plt.figure(figsize=(13,17))
+sns.countplot( x = 'Marca', data = dados, color = 'blue', 
+              order = dados['Marca'].head(20).value_counts().index).tick_params(labelrotation=90);
+#plt.show()
+# -----------------
+```
+
+<br/>
+
+
+
+-----------------------------------------------------
+
+
+## Python - Gráficos
+
+<hr/>
+
+#### Gráficos Bivariados
+
+
+```{python, eval = T, echo=T}
+# -----------------
+plt.figure(figsize=(13,17))
+sns.pairplot(data=dados.drop(['Kilometers_Driven','Price'],axis=1))
+#plt.show()
+# -----------------
+```
+
+<br/>
+
+
+-----------------------------------------------------
+
+
+## Python - Gráficos
+
+<hr/>
+
+#### Gráficos Bivariados
+
+
+```{python, eval = T, echo=F}
+# -----------------
+plt.figure(figsize=(13,17))
+sns.pairplot(data=dados.drop(['Kilometers_Driven','Price'],axis=1))
+#plt.show()
+# -----------------
+```
+
+<br/>
+
+## Python - Correlação
+
+<hr/>
+
+
+
+
+------------------------------------------------------------------------
+
+## Referências
+
+<hr/>
+
+Link para Notebook:
+
+- [https://colab.research.google.com/drive/1-XT2NLPWjADxbbvIhqus3EUfgPkAQ68l?usp=sharing](https://colab.research.google.com/drive/1-XT2NLPWjADxbbvIhqus3EUfgPkAQ68l?usp=sharing)
+
+
+Livros:
+
+-   R para Data Science
+-   Data Science do zero
+-   Estatística e Ciêcia de Dados
+
+Sites:
+
+- 
+- 
+
+------------------------------------------------------------------------
+
+<br/> <br/>
+
+<hr/>
+
+<h1 style="text-align: center;">
+
+OBRIGADO!
+
+</h1>
+
+<hr/>
+
+::: {style="text-align: center"}
+Slide produzido com [quarto](https://quarto.org/)
+:::
+
+<br/> <br/> <br/> <br/>
+
+**Lattes**: [http://lattes.cnpq.br/4617170601890026](http://lattes.cnpq.br/4617170601890026)
+
+**LinkedIn**: [jodavidferreira](https://www.linkedin.com/in/jodavidferreira/)
+
+**Site Pessoal**: <https://jodavid.github.io/>
+
+**Instagram**: [jodavidferreira](https://www.instagram.com/jodavidferreira/)
