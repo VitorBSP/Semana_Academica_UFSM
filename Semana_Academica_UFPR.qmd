@@ -290,7 +290,7 @@ dados = pd.read_csv("dataset/used_cars_data.csv")
 ```
 
 
-### Visualizando um *cabeçalho* dos dados
+#### Visualizando um *cabeçalho* dos dados
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
@@ -344,8 +344,6 @@ dados.info()
 # Visualizando Quantidades de Linhas e colunas
 len(dados)
 # -----------------
-print("A quantidade de linhas da base são: " + str(len(dados)))
-# -----------------
 ```
 
 <br/>
@@ -354,7 +352,18 @@ print("A quantidade de linhas da base são: " + str(len(dados)))
 # -----------------
 len(dados.columns)
 # -----------------
-print("A quantidade de colunas da base são: " + str(len(dados.columns)))
+```
+
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+dados.columns
+# -----------------
+```
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+dados.shape
 # -----------------
 ```
 
@@ -408,7 +417,7 @@ dados.isnull().sum()
 ```{python, eval = F, echo=TRUE}
 # -----------------
 # Remover coluna 'S.No.' dos dados
-dados = dados.drop(['S.No.'], axis = 1)
+dados = dados.drop(['id'], axis = 1)
 dados.info()
 # -----------------
 ```
@@ -418,7 +427,7 @@ dados.info()
 ```{python, eval = T, echo=TRUE}
 # -----------------
 # Remover coluna 'S.No.' dos dados
-dados = dados.drop(columns = ['S.No.'])
+dados = dados.drop(columns = ['id'])
 dados.info()
 # -----------------
 ```
@@ -462,7 +471,7 @@ Calculando Média de diferentes formas:
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
-dados["Price"].mean()
+dados["preco"].mean()
 # -----------------
 ```
 
@@ -470,7 +479,7 @@ dados["Price"].mean()
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
-np.mean(dados["Price"])
+np.mean(dados["preco"])
 # -----------------
 ```
 
@@ -478,7 +487,7 @@ np.mean(dados["Price"])
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
-sp.mean(dados["Price"])
+sp.mean(dados["preco"])
 # -----------------
 ```
 
@@ -499,7 +508,7 @@ Calculando Mínimo de diferentes formas:
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
-dados["Price"].min()
+dados["preco"].min()
 # -----------------
 ```
 
@@ -507,7 +516,7 @@ dados["Price"].min()
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
-np.min(dados["Price"])
+np.min(dados["preco"])
 # -----------------
 ```
 
@@ -528,13 +537,13 @@ Calculando quantis:
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
-dados["Price"].quantile()
+dados["preco"].quantile()
 # -----------------
 ```
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
-dados["Price"].median()
+dados["preco"].median()
 # -----------------
 ```
 
@@ -545,7 +554,7 @@ dados["Price"].median()
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
-np.quantile(dados["Price"], 0.5)
+np.quantile(dados["preco"], 0.5)
 # -----------------
 ```
 
@@ -569,7 +578,7 @@ Calculando quantis:
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
-np.nanquantile(dados["Price"], 0.5)
+np.nanquantile(dados["preco"], 0.5)
 # -----------------
 ```
 
@@ -577,7 +586,7 @@ np.nanquantile(dados["Price"], 0.5)
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
-np.nanquantile(dados["Price"], [0,0.25,0.5,0.75,1]) #Numpy
+np.nanquantile(dados["preco"], [0,0.25,0.5,0.75,1]) #Numpy
 # -----------------
 ```
 
@@ -588,7 +597,7 @@ np.nanquantile(dados["Price"], [0,0.25,0.5,0.75,1]) #Numpy
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
-dados["Price"].quantile([0,0.25,0.5,0.75,1]) #Pandas
+dados["preco"].quantile([0,0.25,0.5,0.75,1]) #Pandas
 # -----------------
 ```
 
@@ -610,7 +619,7 @@ Calculando quantis em mais de uma coluna:
 # -----------------
 # Quantis mais colunas
 # -----------------
-dados[["Kilometers_Driven","Price"]].quantile([0,0.25,0.5,0.75,1]) #Pandas
+dados[["quilometros_percorridos","preco"]].quantile([0,0.25,0.5,0.75,1]) #Pandas
 # -----------------
 ```
 
@@ -628,7 +637,7 @@ OBS.: Para não ficar sempre mostrando mais de uma solução, vamos focar no Pan
 
 <br/>
 
-Calculando variância entre as variáveis
+Calculando variância das variáveis
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
@@ -650,7 +659,7 @@ OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como
 
 <br/>
 
-Calculando correlação entre as variáveis
+Calculando covariância entre as variáveis
 
 ```{python, eval = T, echo=TRUE}
 # -----------------
@@ -702,7 +711,7 @@ Calculando frequências quando as variáveis são categóricas
 
 ```{python, eval = T, echo=TRUE}
 # ---------------------
-dados["Name"].value_counts()
+dados["nome"].value_counts()
 # ---------------------
 ```
 
@@ -723,7 +732,7 @@ Calculando frequências quando as variáveis são categóricas
 
 ```{python, eval = T, echo=TRUE}
 # ---------------------
-dados.groupby(["Name"])["Name"] \
+dados.groupby(["nome"])["nome"] \
       .count() \
       .reset_index(name='count') \
       .sort_values(['count'], ascending=False)
@@ -740,17 +749,120 @@ dados.groupby(["Name"])["Name"] \
 <hr/>
 
 
-Calculando frequências quando as variáveis são categóricas
+Criando tabelas cruzadas entre as variáveis
 
 <br/>
 
 ```{python, eval = T, echo=TRUE}
 # ---------------------
-dados[["Name","Transmission"]].groupby(['Name', 'Transmission']).size()
+tabela_cruzada = pd.crosstab(dados['transmissao'], dados['tipo_proprietario']) 
+# -------
+tabela_cruzada
 # ---------------------
 ```
 
 <br/>
+
+
+```{python, eval = T, echo=TRUE}
+# ---------------------
+# Teste de Qui-Quadrado
+from scipy.stats import chisquare
+from scipy.stats import chi2_contingency
+
+# Aplicando Teste Qui-Quadrado na Tabela. 
+c, p, dof, expected = chi2_contingency(tabela_cruzada)
+print(p)
+# ---------------------
+```
+
+
+-----------------------------------------------------
+
+## Python - Variáveis Qualitativas
+
+<hr/>
+
+
+Criando tabelas cruzadas entre as variáveis
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# ---------------------
+# Teste de Qui-Quadrado com Transmissao e Localização
+tabela_cruzada = pd.crosstab(dados['transmissao'], dados['localizacao']) 
+# ---
+c, p, dof, expected = chi2_contingency(tabela_cruzada)
+print(p)
+# ---------------------
+```
+
+<br/>
+
+
+```{python, eval = T, echo=TRUE}
+# ---------------------
+# Tabela Cruzada para Transmissao e Localização
+tabela_cruzada
+# --------
+```
+
+-----------------------------------------------------
+
+## Python - Criação de variáveis
+
+<hr/>
+
+<!--
+### Feature Engineering - Criação de variáveis
+-->
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Criação da variável 'Car_Age'como uma novas variável
+from datetime import date
+# ---
+print("O ano atual é: " + str(date.today().year) )
+# --
+dados['idade_carro'] = date.today().year - dados['ano']
+# --
+dados[["nome", "preco", "ano", "idade_carro"]]
+# -----------------
+```
+
+<br/>
+
+
+-----------------------------------------------------
+
+## Python - Criação de variáveis
+
+<hr/>
+
+<!--
+### Feature Engineering - Criação de variáveis
+-->
+
+<br/>
+
+```{python, eval = T, echo=TRUE}
+# -----------------
+# Criação da variável 'Marca' do carro
+# str.split: quebra as strings
+# str.get(0): pega todas as posições 0 de cada lista criada da linha
+dados['marca'] = dados.nome.str.split().str.get(0)
+# --
+dados[['nome','marca']].head()
+# -----------------
+```
+
+<br/>
+
+OBS.: Para retornar data.frames com duas ou mais colunas selecionadas, é necessário
+utilizar dois pares de `[]`, ou seja, `df[[colname(s)]]`. O primeiro par retorna uma série, enquanto os colchetes duplos retornam um dataframe.
 
 
 -----------------------------------------------------
@@ -777,64 +889,6 @@ print("Variáveis Numéricas:"+ str(num_cols))
 
 
 -----------------------------------------------------
-
-## Python - Criação de variáveis
-
-<hr/>
-
-<!--
-### Feature Engineering - Criação de variáveis
--->
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Criação da variável 'Car_Age'como uma novas variável
-from datetime import date
-# ---
-print("O ano atual é: " + str(date.today().year) )
-# --
-dados['Car_Age'] = date.today().year - dados['Year']
-# --
-dados[["Name", "Price", "Year", "Car_Age"]]
-# -----------------
-```
-
-<br/>
-
-
------------------------------------------------------
-
-## Python - Criação de variáveis
-
-<hr/>
-
-<!--
-### Feature Engineering - Criação de variáveis
--->
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Criação da variável 'Marca' do carro
-# str.split: quebra as strings
-# str.get(0): pega todas as posições 0 de cada lista criada da linha
-dados['Marca'] = dados.Name.str.split().str.get(0)
-# --
-dados[['Name','Marca']].head()
-# -----------------
-```
-
-<br/>
-
-OBS.: Para retornar data.frames com duas ou mais colunas selecionadas, é necessário
-utilizar dois pares de `[]`, ou seja, `df[[colname(s)]]`. O primeiro par retorna uma série, enquanto os colchetes duplos retornam um dataframe.
-
-
------------------------------------------------------
-
 
 ## Python - Gráficos
 
@@ -902,16 +956,18 @@ plt.show()
 # -----------------
 fig, axes = plt.subplots(3, 2, figsize = (18, 18))
 fig.suptitle('Gráficos de Barras para todas as variáveis categóricas da base de dados')
-sns.countplot(ax = axes[0, 0], x = 'Fuel_Type', data = dados, color = 'blue', 
-              order = dados['Fuel_Type'].value_counts().index);
-sns.countplot(ax = axes[0, 1], x = 'Transmission', data = dados, color = 'blue', 
-              order = dados['Transmission'].value_counts().index);
-sns.countplot(ax = axes[1, 0], x = 'Owner_Type', data = dados, color = 'blue', 
-              order = dados['Owner_Type'].value_counts().index);
-sns.countplot(ax = axes[1, 1], x = 'Location', data = dados, color = 'blue', 
-              order = dados['Location'].value_counts().index);
-sns.countplot(ax = axes[2, 0], x = 'Marca', data = dados, color = 'blue', 
-              order = dados['Marca'].head(20).value_counts().index);
+sns.countplot(ax = axes[0, 0], x = 'tipo_de_combustivel', data = dados, color = 'blue', 
+              order = dados['tipo_de_combustivel'].value_counts().index);
+sns.countplot(ax = axes[0, 1], x = 'transmissao', data = dados, color = 'blue', 
+              order = dados['transmissao'].value_counts().index);
+sns.countplot(ax = axes[1, 0], x = 'tipo_proprietario', data = dados, color = 'blue', 
+              order = dados['tipo_proprietario'].value_counts().index);
+sns.countplot(ax = axes[1, 1], x = 'localizacao', data = dados, color = 'blue', 
+              order = dados['localizacao'].value_counts().index);
+sns.countplot(ax = axes[2, 0], x = 'marca', data = dados, color = 'blue', 
+              order = dados['marca'].head(20).value_counts().index);
+sns.countplot(ax = axes[2, 1], x = 'ano', data = dados, color = 'blue', 
+              order = dados['ano'].head(20).value_counts().index);
 axes[1][1].tick_params(labelrotation=45);
 axes[2][0].tick_params(labelrotation=90);
 axes[2][1].tick_params(labelrotation=90);
@@ -933,10 +989,8 @@ axes[2][1].tick_params(labelrotation=90);
 
 ```{python, eval = T, echo=F}
 # -----------------
-plt.figure(figsize=(13,17))
-sns.countplot( x = 'Marca', data = dados, color = 'blue', 
-              order = dados['Marca'].head(20).value_counts().index).tick_params(labelrotation=90);
-#plt.show()
+sns.countplot( x = 'marca', data = dados, color = 'blue', 
+              order = dados['marca'].head(20).value_counts().index);
 # -----------------
 ```
 
@@ -956,9 +1010,10 @@ sns.countplot( x = 'Marca', data = dados, color = 'blue',
 
 ```{python, eval = T, echo=T}
 # -----------------
-plt.figure(figsize=(13,17))
-sns.pairplot(data=dados.drop(['Kilometers_Driven','Price'],axis=1))
-#plt.show()
+sns.pairplot(data=dados[['quilometros_percorridos','preco','transmissao']], \
+             height=4.5, \
+             corner = True,\
+             hue="transmissao")
 # -----------------
 ```
 
@@ -977,20 +1032,148 @@ sns.pairplot(data=dados.drop(['Kilometers_Driven','Price'],axis=1))
 
 ```{python, eval = T, echo=F}
 # -----------------
-plt.figure(figsize=(13,17))
-sns.pairplot(data=dados.drop(['Kilometers_Driven','Price'],axis=1))
-#plt.show()
+sns.pairplot(data=dados[['quilometros_percorridos','preco','transmissao']], \
+             height=4.5, \
+             corner = True,\
+             hue="transmissao")
 # -----------------
+```
+
+
+-----------------------------------------------------
+
+
+## Python - Gráficos
+
+<hr/>
+
+#### Gráficos de Barras entre variável categórica e uma numérica
+
+
+```{python, eval = T, echo=T}
+# -----------------
+fig, axarr = plt.subplots(1,1, figsize=(7, 8))
+dados_agrupados = dados.groupby('transmissao')['preco'].mean().sort_values(ascending=False)
+dados_agrupados.plot.bar(fontsize=12) \
+  .set_title("Transmissao Vs Preço", fontsize=18)
+# -----------------
+```
+
+
+-----------------------------------------------------
+
+
+## Python - Gráficos
+
+<hr/>
+
+#### Gráficos de Barras entre duas variáveis categóricas e uma numérica
+
+
+```{python, eval = T, echo=T}
+# -------------------
+# Criando uma Tabela para geração do gráfico distinta por categorias
+dfp = dados.pivot_table(index='ano', columns='transmissao', values='preco', aggfunc='mean')
+# -------------------
+dfp.head(10)
+# -----------
+```
+
+
+-----------------------------------------------------
+
+
+## Python - Gráficos
+
+<hr/>
+
+#### Gráficos de Barras entre duas variáveis categóricas e uma numérica
+
+```{python, eval = T, echo=T}
+dfp.plot.barh(fontsize=10, rot = 0) \
+  .set_title("Transmissao Vs Preço", fontsize=18)
+```
+
+
+-----------------------------------------------------
+
+
+## Python - Gráficos
+
+<hr/>
+
+#### HeatMap - Mapa de calor para correlação
+
+```{python, eval = T, echo=T}
+sns.heatmap(dados[['quilometros_percorridos','assentos', 'idade_carro','preco']].corr(), \
+            annot = True, vmin = -1, vmax = 1)
 ```
 
 ------------------------------------------------------------------------
 
-## Python - Gráficos com `Plotly`
+## Python - Outras bibliotecas Gráficas
 
 <hr/>
 
+<p/>
+
+- PlotLy - [https://plotly.com/python/](https://plotly.com/python/)
+<p/>
+
+```{python, eval = T, echo=T}
+import plotly.express as px
+# ------
+dados_agrupados_p = dados_agrupados.reset_index(name = 'preco_medio')
+# ------
+fig = px.bar(dados_agrupados_p, x='transmissao', y = 'preco_medio')
+fig.show()
+```
 
 
+------------------------------------------------------------------------
+
+## Python - Outras bibliotecas Gráficas
+
+<hr/>
+
+<p/>
+
+- Plotnine - [https://plotnine.readthedocs.io/en/stable/](https://plotnine.readthedocs.io/en/stable/) - baseado no `ggplot2`
+
+<p/>
+
+```{python, eval = T, echo=T}
+from plotnine import ggplot, geom_bar, aes
+# ------
+dados_agrupados_p = dados_agrupados.reset_index(name = 'preco_medio')
+# ------
+ggplot(dados_agrupados_p, aes(x = 'transmissao', y = 'preco_medio')) \
++ geom_bar(stat = "identity")
+```
+
+
+
+------------------------------------------------------------------------
+
+## Python - Relatório com o SweetViz
+
+<hr/>
+
+<br/>
+
+```{python, eval = F, echo=T}
+# ---------
+# Importanto a biblioteca
+import sweetviz as sv
+# ---------
+report = sv.analyze(dados)
+report.show_html()
+# ---------
+```
+
+<br/>
+
+Link: [https://jodavid.github.io/Semana_Academica_UFPR/SWEETVIZ_REPORT.html](https://jodavid.github.io/Semana_Academica_UFPR/SWEETVIZ_REPORT.html)
 
 ------------------------------------------------------------------------
 
@@ -1001,11 +1184,17 @@ sns.pairplot(data=dados.drop(['Kilometers_Driven','Price'],axis=1))
 
 <hr/>
 
-#### Alguns resultados que podemos concluir desse estudo:
+<br/>
 
-* abc;
-* def;
-* hig
+O que podemos concluir de forma breve até esse momento com o
+estudo:
+
+<br/>
+
+* Existem uma frequência maior de carros manuais;
+* Os carros de transmissão automáticos são mais caros que os carros manuais;
+* Existe uma correlação fraca/moderada negativa, entre o ano dos carros e os preços, ou seja, quanto maior a idade do carro, mais barato ele é.
+* Existe uma correlação fraca entre idade do carro e quilometragem percorrida, ou seja, quanto mais antigo for o carro, mais quilometragem provavelmente percorreu.
 
 
 
@@ -1027,10 +1216,6 @@ Livros:
 -   Data Science do zero
 -   Estatística e Ciêcia de Dados
 
-Sites:
-
-- 
-- 
 
 ------------------------------------------------------------------------
 
