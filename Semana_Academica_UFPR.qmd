@@ -102,7 +102,6 @@ editor_options:
 
 ### *Compreensão da Problemática* {style="text-align:center"}
 
-<br/> <br/>
 
 -   É preciso ter uma visão clara do problema de negócio a ser resolvido.
 
@@ -140,11 +139,11 @@ Compreender os dados e descobrir o que pode ser digno de nota ou interessante a 
 
 <br/>
 
-> Vamos agora tentar assimiliar o que foi entendido até o momento com uma visão em termos quantitativos e estatístico
+> em termos quantitavivos e de nosso dia a dia
 
 <br/>
 
-Podemos pensar em iniciar nossa AED por esses dois caminhos:
+podemos pensar em iniciar nossa AED por esses dois caminhos:
 
 <br/>
 
@@ -162,12 +161,16 @@ Podemos pensar em iniciar nossa AED por esses dois caminhos:
 -   Medidas de tendência central;
 -   Medidas de dispersão;
 -   Análise Gráfica;
--   Análise de correlação (quando seja possível sua utilização);
+-   Análise de correlação;
 -   Alguns possíveis testes de associação;
 
 <br/>
 
 Através destes pontos, é possível extrair informações interessantes sobre os dados em estudo.
+
+
+![](images/cor.png){.absolute bottom=230 right=0 width="350"}
+
 
 ------------------------------------------------------------------------
 
@@ -357,7 +360,7 @@ dados.info()
 
 <br/>
 
-![](images/pandas_dtypes.png){.absolute bottom=150 right=50 width="450"}
+![](images/pandas_dtypes.png){.absolute bottom=150 right=0 width="500"}
 
 
 ------------------------------------------------------------------------
