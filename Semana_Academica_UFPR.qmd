@@ -230,10 +230,40 @@ link: [https://www.kaggle.com/datasets/sukhmanibedi/cars4u](https://www.kaggle.c
 
 <br/> 
 
-> Com este conjunto de dados vamos utilizar EDA para entender os dados referentes a carros usados e tentar identificar fatores que influenciam o preço do carro.
+> **Problemática:** Esta base de dados é referente a carros usados na 'Índia'. Através dos dados existentes, quais informações relevantes poderíamos obter sobre esses carros usados do país em questão?
 
 <br/> 
-Após a AED, um objetivo poderia ser 'prever o preço do carro usado estão sendo usados como exemplo'.
+
+
+------------------------------------------------------------------------
+
+## Python - Base de dados
+
+<hr/>
+
+<br/> 
+<br/> 
+
+```
+=> id: Número único por linha para representar cada observação;
+=> nome: Nome do carro usado
+=> localizacao: Cidade de localização do carro na Índia
+=> ano: Ano de fabricação do carro
+=> quilometros_percorridos: Quilômetros percorridos pelo carro em km
+=> tipo_de_combustivel: Tipo de combustível utilizado pelo carro
+=> transmissao: Transmissão do carro
+=> tipo_proprietario: Quantos donos o carro já possuiu
+=> quilometragem_por_litro: Quantos km o carro faz com 1 lt
+=> motor: Quantidade de cilindradas do motor
+=> potencia: Potência do motor em bhp
+=> assentos: Quantidade de assentos do carro
+=> novo_preco: Variável que possui um preço do carro em LAKh
+=> preco: Variável que possui preco do carro também em LAKh
+```
+
+<br/> 
+
+###### *Obs.:* 1 Lakh, chamado de um laque, é uma unidade do sistema de numeração indiana. Um laque indiano equivale a 100.000 (cem mil) rupias indianas. E 1 rupia equivale a 0,06 centavos. Assim, 1 Lakh = 6.415,62 reais.
 
 
 ------------------------------------------------------------------------
