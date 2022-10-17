@@ -960,7 +960,7 @@ for col in num_cols:
 
 ```{python, eval = T, echo=F}
 # -----------------
-col = num_cols[0]
+col = num_cols[4]
 print(col)
 print('Assimetria :', round(dados[col].skew(), 2))
 plt.figure(figsize = (10, 4))
