@@ -294,7 +294,7 @@ for languages in df['langs'].unique():
     y=df.query('langs == @languages')['order'],
     name=languages, 
     marker=dict(color=cores_languages[languages])))
-fig.update_traces(mode='markers', marker=dict(line_width=1, symbol='circle', size=40))
+fig.update_traces(mode='markers', marker=dict(line_width=1, symbol='circle', size=32))
 fig.update_layout(
     xaxis=dict(
         showgrid=False,
@@ -313,7 +313,7 @@ fig.update_xaxes(
     ticktext = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 'Futuro'],
     tickvals = [2015.5, 2016.5, 2017.5, 2018.5, 2019.5, 2020.5, 2021.5, 2022.5, 2023.5],
     anchor = 'free', position = 1,
-    tickfont_size = 18)
+    tickfont_size = 15)
 fig.update_yaxes(
     ticktext = ['Prioridade', 'Secundário', 'Útil'],
     tickvals = [3, 2.5, 2])
