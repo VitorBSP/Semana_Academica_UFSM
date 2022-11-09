@@ -414,4 +414,4 @@ fig.show()
 
 <p>
 
-- [Caminho para estudar estatística de maneira independe com Alisson](https://github.com/AlissonRP/FreeStats)
+- [Caminho para estudar estatística de maneira independente com Alisson](https://github.com/AlissonRP/FreeStats)
