@@ -20,6 +20,28 @@ editor_options:
 
 ## Sumário
 
+<br/>
+
+- Objetivo
+
+<p>
+
+- Um pouco sobre mim e a HartB
+
+<p>
+
+- 3 pilares para o desenvolvimento profissional 
+
+<p>
+
+- Caminho "Ótimo" e Diferença do Estatístico
+
+<p>
+
+- Materias para Estudo
+
+
+
 ## Objetivo 
 
 <br/>
@@ -44,7 +66,7 @@ editor_options:
 
 <p>
 
-- Quero desenvolver soluções voltas à Educação, Esporte e Saúde
+- Quero desenvolver soluções voltadas à Educação, Esporte e Saúde
 
 <p>
 
@@ -72,6 +94,8 @@ editor_options:
 <p>
 
 - Fui bolsista na Pró-Reitoria de Planejamento por 6 meses
+
+<p>
 
 - Sou Cientista de Dados Jr. na HartB
 
@@ -102,7 +126,7 @@ editor_options:
 ## Um pouco sobre a HartB
 
 
-![Alguns clientes da HartB](images/EDA.png){fig-align="center" width="1000"}
+![Alguns clientes da HartB](images/clientes.png){fig-align="center" width="1000"}
 
 
 ## Um pouco sobre a HartB
