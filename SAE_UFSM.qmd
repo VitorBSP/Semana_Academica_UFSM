@@ -1,7 +1,7 @@
 ---
 title: "Um aluno de estatística no mercado de trabalho de IA"
 subtitle: "  "
-author: "Vítor Periera"
+author: "Vítor Pereira"
 institute: "UFSM - CCNE | HartB Group"
 title-slide-attributes:
   data-background-image: images/SAE_background.png
@@ -10,7 +10,6 @@ title-slide-attributes:
 format:
   revealjs:
     slide-number: c/t
-    css: ["theme/theme.css"]
     theme: default #dark
     footer: "Ingresso no mercado de trabalho - SEMANA ACADÊMICA UFSM - [Vítor Pereira](https://github.com/VitorBSP)"
     logo: "images/logo.png"
@@ -21,17 +20,56 @@ editor_options:
 
 ## Sumário
 
-## Um pouco sobre mim {.incremental}
+## Objetivo 
+
+<br/>
+<br/>
+
+### Motivá-los com o mercado e o futuro para estatístico (cientista de dadods)
+
+### Tentar ajudá-los a trilhar o caminho "ótimo"
+
+## Um pouco sobre mim 
+<hr/>
+
+<br/>
+
+<br/>
 
 - Técnico em Informática pelo CTISM e "Quase" Estatístico
 
+<p>
+
 - Minhas áreas favoritas na estatística são: Probabilidade, Inferência e Regressão
+
+<p>
 
 - Quero desenvolver soluções voltas à Educação, Esporte e Saúde
 
+<p>
+
 - Fui bolsista de Desenvolvimento Web, Regressão e Séries Temporais
 
+## Um pouco sobre mim 
+<hr/>
+
+<br/>
+
+<br/>
+
+<p>
+
+- Trabalhei 4 anos na Recuperadora Roso
+
+<p>
+
+- Fui consultor e Diretor de Adm/Fin na Sigma Jr.
+
+<p>
+
 - Fui estagiário por 4 meses na CowMed
+
+<p>
 
 - Fui bolsista na Pró-Reitoria de Planejamento por 6 meses
 
@@ -39,1271 +77,317 @@ editor_options:
 
 ## Um pouco sobre a HartB
 
-- Clientes
-
-- Google 
-
-- Rutilo
-
-## 
-
-
-
-## Introdução
-
-<hr/>
-
-![Fluxograma do processo de ciência de dados de Doing Data Science, de Schutt & O'Neil (2013)](images/EDA.png){fig-align="center" width="900"}
-
-------------------------------------------------------------------------
-
-## O que é Análise Exploratória de Dados?
-
+### Inovation as a Service
 <hr/>
 
 <br/>
-
--   A Análise Exploratória de Dados não é um processo com um conjunto de regras rígidas;
 
 <p>
 
--   Mais do que qualquer coisa é um estado de espírito;
+- Resolver problemas com Inteligência Artificial;
 
 <p>
 
--   Você deve sentir-se livre para investigar cada ideia que lhe venha a mente, considerando fazer sentido a problemática em estudo;
-    -   Algumas darão resultados;
-    -   Outras particularmente não levarão a lugar nenhum;
+- Foco em geração de valor através dos dados e soluções personalizadas;
 
-<!--
 <p>
 
--   Mas com sua exploração, você provavelmente será direcionado para resultados produtivos, que por fim, será o que vai ser comunicado aos outros;
+- Diversas equipes especializadas e focadas para a transformação das tomadas decisões;
 
--->
+<p>
 
-
-![](images/predictive-analytics-computer-icons-data-analysis-business-intelligence-statistical-information-analysis-59d1882286ede637d0ff63e9ac65936c.png){.absolute bottom=0 right=50 width="300"}
-
-
-------------------------------------------------------------------------
+- Especialidade em: Big Data, Internet das Coisas, Análise de Dados e agora em Desenvolvimento de Software;  
 
 
-## Análise Exploratória de Dados
-
-<hr/>
-
-<!--
-![](images/image%20(3).png){.absolute top=100 right=50 border-radius= 10 width="250"}
--->
-<img src="images/image%20(3).png" style="border-radius: 10px; top: 100px; right: 50px; position: absolute; width: 250px; height:120px;"/>
+## Um pouco sobre a HartB
 
 
-<br/>
-<br/>
-<br/>
-<br/>
+![Alguns clientes da HartB](images/EDA.png){fig-align="center" width="1000"}
 
-* Não há regras sobre quais perguntas você deve fazer para guiar sua pesquisa.
 
-<br/>
+## Um pouco sobre a HartB
 
-* Mas existe dois entendimentos essências para uma boa Análise Exploratória:
+![Uma nova Parceria: HartB é a uma Start up do Sistema Google](images/google.png){fig-align="center" width="1000"}
 
-<br/>
-
-<hr/>
-
-### Compreensão da problemática e  {style="text-align:center"}
-
-### Compreensão do contexto {style="text-align:center"}
-
+## O que aprendi de novo
 <hr/>
 
 <br/>
 
-------------------------------------------------------------------------
+<p>
 
-## Análise Exploratória de Dados
+- Estrutura de projetos em Equipe (CRISP-DM)
 
+<p>
+
+- Git Lab
+
+<p> 
+
+- Conceito e criação de API
+
+
+<p>
+
+- Banco de Dados não relacional: Solr
+
+<p>
+
+- Programação Orientada à Objeto
+
+<p>
+
+- Arquitetura Limpa e Código Limpo
+
+
+## 3 pilares para o desenvolvimento profissional
 <hr/>
 
 <br/>
 
-### *Compreensão da Problemática* {style="text-align:center"}
-
-
--   É preciso ter uma visão clara do problema de negócio a ser resolvido.
-
-![](images/crisp.png){fig-align="center" width="600"}
-
-------------------------------------------------------------------------
-
-## Análise Exploratória de Dados
-
-<hr/>
+<br/>
 
 <br/>
 
-### *Compreensão do Contexto* {style="text-align:center"}
+<p> 
 
-<img src="images/contexto.jpg" style="border-radius: 10px; top: 250px; right: 200px; position: absolute; width: 300px; height:157px;"/>
+- Pilar 1: Sempre faça um pouco a mais (novo ou melhor)
 
-<br/> <br/>
+<p>
 
--   Quem é seu público?
+- Pilar 2: "Se pode ser automatizado, deve ser automatizado"
 
-<br/>
+<p>
 
--   O que você precisa que ele saiba?
+- Pilar 3: Network 
 
-<br/>
+## Pilar 1 
 
-Compreender os dados e descobrir o que pode ser digno de nota ou interessante a destacar para outras pessoas.
+### Sempre faça um pouco a mais
 
-------------------------------------------------------------------------
 
-## Análise Exploratória de Dados
+```{python}
 
-<hr/>
-
-<br/>
-
-> em termos quantitavivos e de nosso dia a dia
-
-<br/>
-
-podemos pensar em iniciar nossa AED por esses dois caminhos:
-
-<br/>
-
-1.  Que tipo de variação ocorre dentro de minhas `variáveis`?
-2.  Que tipo de covariação ocorre entre minhas `variáveis`?
-
-------------------------------------------------------------------------
-
-## O que geralmente é utilizada na AED
-
-<hr/>
-
-<br/>
-
--   Medidas de tendência central;
--   Medidas de dispersão;
--   Análise Gráfica;
--   Análise de correlação;
--   Alguns possíveis testes de associação;
-
-<br/>
-
-Através destes pontos, é possível extrair informações interessantes sobre os dados em estudo.
-
-
-![](images/cor.png){.absolute bottom=230 right=0 width="350"}
-
-
-------------------------------------------------------------------------
-
-## Dados Tabulados (*Tidy Data*)
-
-<hr/>
-
-<br/> <br/>
-
-### Reflexão: 
-
-<hr/>
-
-<br/>
-
-#### Conjuntos de dados arrumados são todos iguais, mas cada conjunto de dados bagunçado, é bagunçado de sua própria maneira.
-
-*- Hadley Wickham*
-
-<br/>
-
-<hr/>
-
-## Dados Tabulados (*Tidy Data*)
-
-<hr/>
-
-<br/> Há três regras inter-relacionadas que tornam um conjunto de dados arrumados (*tidy*):
-
-1.  Cada `variável` deve ter sua própria coluna.
-
-2.  Cada `observação` deve ter sua própria linha.
-
-3.  Cada `valor` deve ter sua própria célula.
-
-![](images/tidy_data_01.png){fig-align="center" width="400"}
-
-------------------------------------------------------------------------
-
-<br/> <br/> <br/> <br/> <br/>
-
-<h1 style="text-align: center;">
-
-Vamos ao python?
-
-</h1>
-
-------------------------------------------------------------------------
-
-## Python - Base de dados
-
-<hr/>
-
-<br/> 
-
-DataSet utilizado: `used_cars_data.csv`
-
-<br/> 
-link: [https://www.kaggle.com/datasets/sukhmanibedi/cars4u](https://www.kaggle.com/datasets/sukhmanibedi/cars4u)
-
-<br/> 
-
-> **Problemática:** Esta base de dados é referente a carros usados na 'Índia'. Através dos dados existentes, quais informações relevantes poderíamos obter sobre esses carros usados do país em questão?
-
-<br/> 
-
-
-------------------------------------------------------------------------
-
-## Python - Base de dados
-
-<hr/>
-
-<br/> 
-<br/> 
-
-```
-=> id: Número único por linha para representar cada observação;
-=> nome: Nome do carro usado
-=> localizacao: Cidade de localização do carro na Índia
-=> ano: Ano de fabricação do carro
-=> quilometros_percorridos: Quilômetros percorridos pelo carro em km
-=> tipo_de_combustivel: Tipo de combustível utilizado pelo carro
-=> transmissao: Transmissão do carro
-=> tipo_proprietario: Quantos donos o carro já possuiu
-=> quilometragem_por_litro: Quantos km o carro faz com 1 lt
-=> motor: Quantidade de cilindradas do motor
-=> potencia: Potência do motor em bhp
-=> assentos: Quantidade de assentos do carro
-=> novo_preco: Variável que possui um preço do carro em LAKh
-=> preco: Variável que possui preco do carro também em LAKh
-```
-
-<br/> 
-
-###### *Obs.:* 1 Lakh, chamado de um laque, é uma unidade do sistema de numeração indiana. Um laque indiano equivale a 100.000 (cem mil) rupias indianas. E 1 rupia equivale a 0,06 centavos. Assim, 1 Lakh = 6.415,62 reais.
-
-
-------------------------------------------------------------------------
-
-## Python - Importação das Bibliotecas
-
-<hr/>
-
-<br/>
-
-O primeiro passo nesse caso é importar bibliotecas necessárias para análise:
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Bibliotecas necessarias para Analise dos Dados
+import plotly.graph_objects as go
+from easeimage.utils import io
 import pandas as pd
-import numpy as np
-import scipy as sp
-# -----------------
-# Bibliotecas Gráficas
-import matplotlib.pyplot as plt
-import seaborn as sns
-# -----------------
-import plotly.express as px
-# -----------------
 
-```
-
-<br/>
-
-
-* Biblioteca Pandas: [https://pandas.pydata.org/](https://pandas.pydata.org/)
-* Biblioteca Numpy: [https://numpy.org/](https://numpy.org/)
-
-<br/>
-
-
-```{r, eval = T, echo=TRUE}
-```
-
-
-------------------------------------------------------------------------
-
-## Python - Lendo base de dados
-
-<hr/>
-
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Lendo a Base de dados
-dados = pd.read_csv("dataset/used_cars_data.csv")
-# -----------------
-```
-
-
-#### Visualizando um *cabeçalho* dos dados
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Visualizando um cabeçalho dos dados
-dados.head()
-# -----------------
-```
-
-<br/>
-
-```{python, eval = F, echo=T}
-# -----------------
-# Visualizando os últimos dados
-dados.tail()
-# -----------------
-```
-
-
-------------------------------------------------------------------------
-
-## Python - Tipos das variáveis
-
-<hr/>
-
-<br/>
-
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Visualizando Informações das colunas
-dados.info()
-# -----------------
-```
-
-<br/>
-
-![](images/pandas_dtypes.png){.absolute bottom=150 right=0 width="500"}
-
-
-------------------------------------------------------------------------
-
-## Python - Tamanho da base de dados
-
-<hr/>
-
-<br/>
-
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Visualizando Quantidades de Linhas e colunas
-len(dados)
-# -----------------
-```
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-len(dados.columns)
-# -----------------
-```
-
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-dados.columns
-# -----------------
-```
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-dados.shape
-# -----------------
-```
-
-
------------------------------------------------------
-
-## Python - Dados únicos por variável
-
-<hr/>
-
-<br/>
-
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Checando dados únicos por variável
-dados.nunique()
-# -----------------
-```
-
-<br/>
-
-
------------------------------------------------------
-
-## Python - Valores nulos nas colunas
-
-<hr/>
-
-<br/>
-
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Checando variáveis que possuem dados ausentes
-dados.isnull().sum()
-# -----------------
-```
-
-<br/>
-
-
------------------------------------------------------
-
-## Python - Removendo colunas
-
-<hr/>
-
-<p/>
-
-```{python, eval = F, echo=TRUE}
-# -----------------
-# Remover coluna 'S.No.' dos dados
-dados = dados.drop(['id'], axis = 1)
-dados.info()
-# -----------------
-```
-
-<p/>
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Remover coluna 'S.No.' dos dados
-dados = dados.drop(columns = ['id'])
-dados.info()
-# -----------------
-```
-
-<br/>
-
-
------------------------------------------------------
-
-
-## Python - Métricas Estatísticas
-
-<hr/>
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-dados.describe()
-# -----------------
-```
-
-<br/>
-
-OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como
-*int*, *float*.
-
------------------------------------------------------
-
-
-## Python - Medidas de tend. central
-
-<hr/>
-
-<p/>
-
-Calculando Média de diferentes formas:
-
-
-#### Usando Pandas
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-dados["preco"].mean()
-# -----------------
-```
-
-#### Usando numpy
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-np.mean(dados["preco"])
-# -----------------
-```
-
-#### Usando scipy
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-sp.mean(dados["preco"])
-# -----------------
-```
-
-
------------------------------------------------------
-
-
-## Python - Medidas de tend. central
-
-<hr/>
-
-<p/>
-
-Calculando Mínimo de diferentes formas:
-
-
-#### Usando Pandas
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-dados["preco"].min()
-# -----------------
-```
-
-#### Usando numpy
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-np.min(dados["preco"])
-# -----------------
-```
-
-
------------------------------------------------------
-
-
-## Python - Medidas de tend. central
-
-<hr/>
-
-<p/>
-
-Calculando quantis:
-
-
-#### Usando Pandas
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-dados["preco"].quantile()
-# -----------------
-```
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-dados["preco"].median()
-# -----------------
-```
-
-
-<p/>
-
-#### Usando numpy
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-np.quantile(dados["preco"], 0.5)
-# -----------------
-```
-
-Porque com `numpy` retornou `nan`?
-
-
-
------------------------------------------------------
-
-
-## Python - Medidas de tend. central
-
-<hr/>
-
-<p/>
-
-Calculando quantis:
-
-
-#### Corrigindo numpy
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-np.nanquantile(dados["preco"], 0.5)
-# -----------------
-```
-
-##### considerando mais de um quantil
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-np.nanquantile(dados["preco"], [0,0.25,0.5,0.75,1]) #Numpy
-# -----------------
-```
-
-
-<p/>
-
-#### Usando pandas
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-dados["preco"].quantile([0,0.25,0.5,0.75,1]) #Pandas
-# -----------------
-```
-
-
-
-
------------------------------------------------------
-
-
-## Python - Medidas de tend. central
-
-<hr/>
-
-<br/>
-
-Calculando quantis em mais de uma coluna:
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Quantis mais colunas
-# -----------------
-dados[["quilometros_percorridos","preco"]].quantile([0,0.25,0.5,0.75,1]) #Pandas
-# -----------------
-```
-
-<p/>
-
-OBS.: Para não ficar sempre mostrando mais de uma solução, vamos focar no Pandas e seguir com ela até o fim desse minicurso.
-
-
------------------------------------------------------
-
-
-## Python - Medidas de dispersão
-
-<hr/>
-
-<br/>
-
-Calculando variância das variáveis
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-dados.var()
-# -----------------
-```
-
-<br/>
-
-OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como
-*int*, *float*.
-
------------------------------------------------------
-
-
-## Python - Medidas de dispersão
-
-<hr/>
-
-<br/>
-
-Calculando covariância entre as variáveis
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-dados.cov()
-# -----------------
-```
-
-<br/>
-
-OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como
-*int*, *float*.
-
-
------------------------------------------------------
-
-
-## Python - Medidas de dispersão
-
-<hr/>
-
-<br/>
-
-Calculando correlação entre as variáveis
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Quantis mais colunas
-# -----------------
-dados.corr()
-# -----------------
-```
-
-<br/>
-
-OBS.: Ele considera os tipos de dados numéricos e calcula as métricas como
-*int*, *float*.
-
-
------------------------------------------------------
-
-## Python - Variáveis Qualitativas
-
-<hr/>
-
-
-Calculando frequências quando as variáveis são categóricas
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# ---------------------
-dados["nome"].value_counts()
-# ---------------------
-```
-
-<br/>
-
-
-
------------------------------------------------------
-
-## Python - Variáveis Qualitativas
-
-<hr/>
-
-
-Calculando frequências quando as variáveis são categóricas
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# ---------------------
-dados.groupby(["nome"])["nome"] \
-      .count() \
-      .reset_index(name='count') \
-      .sort_values(['count'], ascending=False)
-# ---------------------
-```
-
-<br/>
-
-
------------------------------------------------------
-
-## Python - Variáveis Qualitativas
-
-<hr/>
-
-
-Criando tabelas cruzadas entre as variáveis
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# ---------------------
-tabela_cruzada = pd.crosstab(dados['transmissao'], dados['tipo_proprietario']) 
-# -------
-tabela_cruzada
-# ---------------------
-```
-
-<br/>
-
-
-```{python, eval = T, echo=TRUE}
-# ---------------------
-# Teste de Qui-Quadrado
-from scipy.stats import chisquare
-from scipy.stats import chi2_contingency
-
-# Aplicando Teste Qui-Quadrado na Tabela. 
-c, p, dof, expected = chi2_contingency(tabela_cruzada)
-print(p)
-# ---------------------
-```
-
-
------------------------------------------------------
-
-## Python - Variáveis Qualitativas
-
-<hr/>
-
-
-Criando tabelas cruzadas entre as variáveis
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# ---------------------
-# Teste de Qui-Quadrado com Transmissao e Localização
-tabela_cruzada = pd.crosstab(dados['transmissao'], dados['localizacao']) 
-# ---
-c, p, dof, expected = chi2_contingency(tabela_cruzada)
-print(p)
-# ---------------------
-```
-
-<br/>
-
-
-```{python, eval = T, echo=TRUE}
-# ---------------------
-# Tabela Cruzada para Transmissao e Localização
-tabela_cruzada
-# --------
-```
-
------------------------------------------------------
-
-## Python - Criação de variáveis
-
-<hr/>
-
-<!--
-### Feature Engineering - Criação de variáveis
--->
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Criação da variável 'Car_Age'como uma novas variável
-from datetime import date
-# ---
-print("O ano atual é: " + str(date.today().year) )
-# --
-dados['idade_carro'] = date.today().year - dados['ano']
-# --
-dados[["nome", "preco", "ano", "idade_carro"]]
-# -----------------
-```
-
-<br/>
-
-
------------------------------------------------------
-
-## Python - Criação de variáveis
-
-<hr/>
-
-<!--
-### Feature Engineering - Criação de variáveis
--->
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-# Criação da variável 'Marca' do carro
-# str.split: quebra as strings
-# str.get(0): pega todas as posições 0 de cada lista criada da linha
-dados['marca'] = dados.nome.str.split().str.get(0)
-# --
-dados[['nome','marca']].head()
-# -----------------
-```
-
-<br/>
-
-OBS.: Para retornar data.frames com duas ou mais colunas selecionadas, é necessário
-utilizar dois pares de `[]`, ou seja, `df[[colname(s)]]`. O primeiro par retorna uma série, enquanto os colchetes duplos retornam um dataframe.
-
-
------------------------------------------------------
-
-## Python - Verificando variáveis
-
-<hr/>
-
-
-Antes dos gráficos, vamos verificar quais variáveis são numéricas e quais são categóricas
-
-<br/>
-
-```{python, eval = T, echo=TRUE}
-# -----------------
-cat_cols = dados.select_dtypes(include=['object']).columns
-num_cols = dados.select_dtypes(include=np.number).columns.tolist()
-print("Variáveis Categóricas: " + str(cat_cols))
-print("Variáveis Numéricas:"+ str(num_cols))
-# -----------------
-```
-
-<br/>
-
-
------------------------------------------------------
-
-## Python - Gráficos
-
-<hr/>
-
-#### Histogramas e BoxPlot
-
-Antes dos gráficos, vamos verificar quais variáveis são numéricas e quais são categóricas
-
-<br/>
-
-```{python, eval = F, echo=TRUE}
-# -----------------
-for col in num_cols:
-    print(col)
-    print('Assimetria :', round(dados[col].skew(), 2))
-    plt.figure(figsize = (15, 4))
-    plt.subplot(1, 2, 1)
-    dados[col].hist(grid=False)
-    plt.ylabel('Frequência')
-    plt.subplot(1, 2, 2)
-    sns.boxplot(x=dados[col])
-    plt.show()
-# -----------------
-```
-
------------------------------------------------------
-
-
-## Python - Gráficos
-
-<hr/>
-
-#### Histogramas e BoxPlot
-
-
-```{python, eval = T, echo=F}
-# -----------------
-col = num_cols[4]
-print(col)
-print('Assimetria :', round(dados[col].skew(), 2))
-plt.figure(figsize = (10, 4))
-plt.subplot(1, 2, 1)
-dados[col].hist(grid=False)
-plt.ylabel('Frequência')
-plt.subplot(1, 2, 2)
-sns.boxplot(x=dados[col])
-plt.show()
-# -----------------
-```
-
-<br/>
-
------------------------------------------------------
-
-
-## Python - Gráficos
-
-<hr/>
-
-#### Gráficos de Barras
-
-
-```{python, eval = F, echo=T}
-# -----------------
-fig, axes = plt.subplots(3, 2, figsize = (18, 18))
-fig.suptitle('Gráficos de Barras para todas as variáveis categóricas da base de dados')
-sns.countplot(ax = axes[0, 0], x = 'tipo_de_combustivel', data = dados, color = 'blue', 
-              order = dados['tipo_de_combustivel'].value_counts().index);
-sns.countplot(ax = axes[0, 1], x = 'transmissao', data = dados, color = 'blue', 
-              order = dados['transmissao'].value_counts().index);
-sns.countplot(ax = axes[1, 0], x = 'tipo_proprietario', data = dados, color = 'blue', 
-              order = dados['tipo_proprietario'].value_counts().index);
-sns.countplot(ax = axes[1, 1], x = 'localizacao', data = dados, color = 'blue', 
-              order = dados['localizacao'].value_counts().index);
-sns.countplot(ax = axes[2, 0], x = 'marca', data = dados, color = 'blue', 
-              order = dados['marca'].head(20).value_counts().index);
-sns.countplot(ax = axes[2, 1], x = 'ano', data = dados, color = 'blue', 
-              order = dados['ano'].head(20).value_counts().index);
-axes[1][1].tick_params(labelrotation=45);
-axes[2][0].tick_params(labelrotation=90);
-axes[2][1].tick_params(labelrotation=90);
-# -----------------
-```
-
-<br/>
-
-
------------------------------------------------------
-
-
-## Python - Gráficos
-
-<hr/>
-
-#### Gráficos de Barras
-
-
-```{python, eval = T, echo=F}
-# -----------------
-sns.countplot( x = 'marca', data = dados, color = 'blue', 
-              order = dados['marca'].head(20).value_counts().index);
-# -----------------
-```
-
-<br/>
-
-
-
------------------------------------------------------
-
-
-## Python - Gráficos
-
-<hr/>
-
-#### Gráficos Bivariados
-
-
-```{python, eval = T, echo=T}
-# -----------------
-sns.pairplot(data=dados[['quilometros_percorridos','preco','transmissao']], \
-             height=4.5, \
-             corner = True,\
-             hue="transmissao")
-# -----------------
-```
-
-<br/>
-
-
------------------------------------------------------
-
-
-## Python - Gráficos
-
-<hr/>
-
-#### Gráficos Bivariados
-
-
-```{python, eval = T, echo=F}
-# -----------------
-sns.pairplot(data=dados[['quilometros_percorridos','preco','transmissao']], \
-             height=4.5, \
-             corner = True,\
-             hue="transmissao")
-# -----------------
-```
-
-
------------------------------------------------------
-
-
-## Python - Gráficos
-
-<hr/>
-
-#### Gráficos de Barras entre variável categórica e uma numérica
-
-
-```{python, eval = T, echo=T}
-# -----------------
-fig, axarr = plt.subplots(1,1, figsize=(7, 8))
-dados_agrupados = dados.groupby('transmissao')['preco'].mean().sort_values(ascending=False)
-dados_agrupados.plot.bar(fontsize=12) \
-  .set_title("Transmissao Vs Preço", fontsize=18)
-# -----------------
-```
-
-
------------------------------------------------------
-
-
-## Python - Gráficos
-
-<hr/>
-
-#### Gráficos de Barras entre duas variáveis categóricas e uma numérica
-
-
-```{python, eval = T, echo=T}
-# -------------------
-# Criando uma Tabela para geração do gráfico distinta por categorias
-dfp = dados.pivot_table(index='ano', columns='transmissao', values='preco', aggfunc='mean')
-# -------------------
-dfp.head(10)
-# -----------
-```
-
-
------------------------------------------------------
-
-
-## Python - Gráficos
-
-<hr/>
-
-#### Gráficos de Barras entre duas variáveis categóricas e uma numérica
-
-```{python, eval = T, echo=T}
-dfp.plot.barh(fontsize=10, rot = 0) \
-  .set_title("Transmissao Vs Preço", fontsize=18)
-```
-
-
------------------------------------------------------
-
-
-## Python - Gráficos
-
-<hr/>
-
-#### HeatMap - Mapa de calor para correlação
-
-```{python, eval = T, echo=T}
-sns.heatmap(dados[['quilometros_percorridos','assentos', 'idade_carro','preco']].corr(), \
-            annot = True, vmin = -1, vmax = 1)
-```
-
-------------------------------------------------------------------------
-
-## Python - Outras bibliotecas Gráficas
-
-<hr/>
-
-<p/>
-
-- PlotLy - [https://plotly.com/python/](https://plotly.com/python/)
-<p/>
-
-```{python, eval = T, echo=T}
-import plotly.express as px
-# ------
-dados_agrupados_p = dados_agrupados.reset_index(name = 'preco_medio')
-# ------
-fig = px.bar(dados_agrupados_p, x='transmissao', y = 'preco_medio')
+languages = ['Portugol', 'HTML', 
+            'Portugol','HTML', 'C', 
+
+            'PHP', 'HTML', 'CSS', 
+            'PHP', 'JAVA', 'SQL',
+            
+            'PHP', 'JAVA SCRIPT', 'SQL',
+            'PHP', 'SQL', 'JAVA SCRIPT',
+            
+            'PHP',
+            'R', 
+            
+            'PYTHON',
+            'R',
+            
+            'R', 'PYTHON',
+            'R', 'PYTHON', 'SQL',
+            
+            'R',
+            'R', 'SQL',
+            
+            'R', 'PYTHON',
+            'PYTHON', 'JULIA', 'R', 
+            
+            'C', 'SCALA', 'C++']
+year = [2015.25, 2015.25,
+        2015.75, 2015.75, 2015.75,
+
+        2016.25, 2016.25, 2016.25,
+        2016.75, 2016.75, 2016.75,
+        
+        2017.25, 2017.25, 2017.25,
+        2017.75, 2017.75, 2017.75,
+
+        2018.25, 
+        2018.75,
+
+        2019.25, 
+        2019.75,
+        
+        2020.25, 2020.25,
+        2020.75, 2020.75, 2020.75,
+        
+        2021.25, 
+        2021.75, 2021.75,
+        
+        2022.25, 2022.25,
+        2022.75, 2022.75, 2022.75,
+        
+        2023.5, 2023.5, 2023.5]
+order = [3,2,
+        3,2,1,
+        3,2,1,
+        3,2,1,
+        3,2,1,
+        3,2,1,
+        3,
+        3,
+        3,
+        3,
+        3,2,
+        3,2,1,
+        3,
+        3,2,
+        3,2,
+        3,2,1,
+        3,2,1
+        ]
+
+df = pd.DataFrame({'order' : order, 
+                    'langs' : languages,
+                    'year' : year})
+
+df['order'] = df['order'].map({3 : 3, 2 :2.5, 1 : 2})
+cores_languages = {
+                    'Portugol' : "#F1BD07",
+                    'HTML' : '#DD4B25',
+                    'C' : "#6295CB",
+                    'PHP' : '#7377AD',
+                    'CSS' : '#254BDD',
+                    'JAVA' : '#E06C00',
+                    'SQL' : '#E01B23',
+                    'JAVA SCRIPT' : '#EFD81D',
+                    'R' : '#1E63AC',
+                    'PYTHON' : '#B48E00',
+                    'JULIA' : '#A575BB',
+                    'SCALA' : '#D73222',
+                    'C++' : '#15961B'
+                    }
+#%%
+
+fig = go.Figure()
+for languages in df['langs'].unique():
+    fig.add_trace(go.Scatter(
+    x=df.query('langs == @languages')['year'],
+    y=df.query('langs == @languages')['order'],
+    name=languages, 
+    marker=dict(color=cores_languages[languages])))
+fig.update_traces(mode='markers', marker=dict(line_width=1, symbol='circle', size=40))
+fig.update_layout(
+    xaxis=dict(
+        showgrid=False,
+        showticklabels=True,
+    ),
+    margin=dict(l=40, r=40, b=0, t=40),
+    legend=dict(
+        font_size=10,
+        yanchor='top',
+        xanchor='left',
+    ),
+    paper_bgcolor='white',
+    plot_bgcolor='white',
+    hovermode='closest')
+fig.update_xaxes(
+    ticktext = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 'Futuro'],
+    tickvals = [2015.5, 2016.5, 2017.5, 2018.5, 2019.5, 2020.5, 2021.5, 2022.5, 2023.5],
+    anchor = 'free', position = 1,
+    tickfont_size = 18)
+fig.update_yaxes(
+    ticktext = ['Prioridade', 'Secundário', 'Útil'],
+    tickvals = [3, 2.5, 2])
 fig.show()
+
 ```
 
+## Pilar 2
 
-------------------------------------------------------------------------
+### Se pode ser automatizado, deve ser automatizado
 
-## Python - Outras bibliotecas Gráficas
+![](images/rmarkdown.png){fig-align="left" width="200" height= "300"}
+![](images/latex.png){fig-align="center" width="200" height= "300"}
+![](images/git.png){fig-align="right" width="300" height= "300"}
 
-<hr/>
+## Pilar 3 
 
-<p/>
+- Outros 2 naturalmente ajudam com o 3;
 
-- Plotnine - [https://plotnine.readthedocs.io/en/stable/](https://plotnine.readthedocs.io/en/stable/) - baseado no `ggplot2`
-
-<p/>
-
-```{python, eval = T, echo=T}
-from plotnine import ggplot, geom_bar, aes
-# ------
-dados_agrupados_p = dados_agrupados.reset_index(name = 'preco_medio')
-# ------
-ggplot(dados_agrupados_p, aes(x = 'transmissao', y = 'preco_medio')) \
-+ geom_bar(stat = "identity")
-```
+- ![](images/sigma.png){fig-align="right" width="400"}
 
 
-
-------------------------------------------------------------------------
-
-## Python - Relatório com o SweetViz
+## Caminho "Ótimo"
 
 <hr/>
 
 <br/>
 
-```{python, eval = F, echo=T}
-# ---------
-# Importanto a biblioteca
-import sweetviz as sv
-# ---------
-report = sv.analyze(dados)
-report.show_html()
-# ---------
-```
 
-<br/>
+- Em R:
+    - Projeto com Análise Descritiva apenas;
+    - Projeto com modelos simples de Machine Learning (Regressão Logística);
+    - Projeto com modelos mais complexos (Random Forest e XGBoost).
 
-Link: [https://jodavid.github.io/Semana_Academica_UFPR/SWEETVIZ_REPORT.html](https://jodavid.github.io/Semana_Academica_UFPR/SWEETVIZ_REPORT.html)
+- Em Python:
+    - Refazer o Projeto do modelo simples;
+    - Refazer o Projeto do modelo complexo;
+    - Projeto com Web Scraping para Tratamento de dados.
 
-------------------------------------------------------------------------
-
-
-
-
-## Conclusões
-
+## Estatístico vs Cientista da Computação
 <hr/>
 
 <br/>
 
-O que podemos concluir de forma breve até esse momento com o
-estudo:
+<p> 
+
+- Conhecimento da teoria e suposições dos modelos
+
+<p>
+
+- Saber as implicações das violações das suposições e transformações dos modelos
+
+<p>
+
+- Geração de insights e geração de valores com os dados com rigor científico
+
+<p>
+
+- Conhecimento profundo de análise de dados desde descritiva até DL 
+
+<p>
+
+- Cientistas da Computação tem sido atraídos por Engenharia de Machine Learning e MLOPS
+
+
+# "Falar é fácil, me mostre os cursos"
+
+## Cursos para Aprimoramento 
+
+![Indicação de cursos](images/Cursos.png){fig-align="center" width="1000"}
+
+
+## Outros materiais 
+
+<hr/>
 
 <br/>
 
-* Existem uma frequência maior de carros manuais;
-* Os carros de transmissão automáticos são mais caros que os carros manuais;
-* Existe uma correlação fraca/moderada negativa, entre o ano dos carros e os preços, ou seja, quanto maior a idade do carro, mais barato ele é.
-* Existe uma correlação fraca entre idade do carro e quilometragem percorrida, ou seja, quanto mais antigo for o carro, mais quilometragem provavelmente percorreu.
+<p> 
 
+- [Análise Exploratória em Python com Jodavid](https://www.youtube.com/watch?v=GK-7lGI9Sqk)
 
+<p>
 
-------------------------------------------------------------------------
+- [Primeiros passos com R Markdown com Thiago](https://www.youtube.com/watch?v=vdV1xHiwirI&t=86s)
 
+<p>
 
-## Referências
+- [Noções de SQL e Tidyverse com Cátia e Magno](https://www.youtube.com/watch?v=vdV1xHiwirI&t=86s)
 
-<hr/>
+<p>
 
-Link para Notebook:
+- [Introdução ao Aprendizado de Máquina com Douglas](https://colab.research.google.com/drive/1zwCMjGg5j5HqkwtIODuuLYerC3sAVpnV?usp=sharing)
 
-- [https://colab.research.google.com/drive/1-XT2NLPWjADxbbvIhqus3EUfgPkAQ68l?usp=sharing](https://colab.research.google.com/drive/1-XT2NLPWjADxbbvIhqus3EUfgPkAQ68l?usp=sharing)
+<p>
 
+- [Introdução ao PySpark com Jonatas](https://www.youtube.com/watch?v=1-DZKTFK1EE)
 
-Livros:
+<p>
 
--   R para Data Science
--   Data Science do zero
--   Estatística e Ciêcia de Dados
-
-
-------------------------------------------------------------------------
-
-<br/> <br/>
-
-<hr/>
-
-<h1 style="text-align: center;">
-
-OBRIGADO!
-
-</h1>
-
-<hr/>
-
-::: {style="text-align: center"}
-Slide produzido com [quarto](https://quarto.org/)
-:::
-
-<br/> <br/> <br/> <br/>
-
-**Lattes**: [http://lattes.cnpq.br/4617170601890026](http://lattes.cnpq.br/4617170601890026)
-
-**LinkedIn**: [jodavidferreira](https://www.linkedin.com/in/jodavidferreira/)
-
-**Site Pessoal**: <https://jodavid.github.io/>
-
-**Instagram**: [jodavidferreira](https://www.instagram.com/jodavidferreira/)
+- [Caminho para estudar estatística de maneira independe com Alisson](https://github.com/AlissonRP/FreeStats)
