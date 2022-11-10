@@ -439,8 +439,8 @@ fig.update_xaxes(
 fig.update_yaxes(
     ticktext = ['Prioridade', 'Secundário', 'Útil'],
     tickvals = [3, 2.5, 2])
-fig.show()
 ```
+
 
 ## Pilar 2
 
