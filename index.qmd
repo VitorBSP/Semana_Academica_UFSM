@@ -1,5 +1,5 @@
 ---
-title: "Um aluno de estatística no mercado de trabalho de IA"
+title: "Um (quase) estatístico que atua com Inteligência Artificial no mercado de trabalho"
 subtitle: "  "
 author: "Vítor Pereira"
 institute: "UFSM - CCNE | HartB Group"
@@ -42,33 +42,68 @@ editor_options:
 
 <p>
 
-- Materias para Estudo
+- Materiais para Estudo
+
+::: footer
+Pesquisa Operacional :thumbsdown:
+:::
 
 
+## {auto-animate=true}
 
-## Objetivo 
+::: {style="margin-top: 200px; font-size: 3em; font-weight: bold;"}
+Objetivo
+:::
+
+
+## {auto-animate=true}
+
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+Objetivo
+:::
+
 
 <hr/>
 <br/>
 <br/>
-<br/>
 
-### Motivá-los com o futuro como Estatísticos 
+<p>
 
-### Motivá-los com o mercado de Trabalho
+- **Motivá-los com o futuro como Estatísticos** 
 
-### Tentar ajudá-los a trilhar o caminho "ótimo"
+<p>
 
-### Falar sobre a intersecção entre Estatística e DS
+- **Motivá-los com o mercado de Trabalho**
 
-## Um pouco sobre mim 
+<p>
+
+- **Tentar ajudá-los a trilhar o caminho "ótimo"**
+
+<p>
+
+- **Falar sobre a intersecção entre Estatística e DS**
+
+## {auto-animate=true}
+
+::: {style="margin-top: 200px; font-size: 3em;  font-weight: bold;"}
+Um pouco sobre mim 
+:::
+
+
+## {auto-animate=true}
+
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+Um pouco sobre mim
+:::
+
+
 <hr/>
 
 <br/>
 
 <br/>
 
-- Técnico em Informática pelo CTISM e "Quase" Estatístico
+- Técnico em Informática pelo CTISM e Estatístico (quase)
 
 <p>
 
@@ -82,12 +117,16 @@ editor_options:
 
 - Fui bolsista de Desenvolvimento Web, Regressão e Séries Temporais
 
-## Um pouco sobre mim 
+## 
+
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+Um pouco sobre mim
+:::
+
 <hr/>
 
 <br/>
 
-<br/>
 
 <p>
 
@@ -109,7 +148,18 @@ editor_options:
 
 - Sou Cientista de Dados Jr. na HartB
 
-## Um pouco sobre a HartB
+## {auto-animate=true}
+
+::: {style="margin-top: 200px; font-size: 3em; font-weight: bold;"}
+Um pouco sobre a HartB
+:::
+
+
+## {auto-animate=true}
+
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+Um pouco sobre a HartB
+:::
 
 <hr/>
 
@@ -135,7 +185,12 @@ editor_options:
 - Especialidade em: Big Data, Internet das Coisas, Análise de Dados e agora em Desenvolvimento de Software  
 
 
-## Um pouco sobre a HartB
+## 
+
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+Um pouco sobre a HartB
+:::
+
 <hr/>
 <br/>
 <br/>
@@ -144,7 +199,12 @@ editor_options:
 ![Alguns clientes da HartB](images/clientes.png){fig-align="center" width="1000"}
 </center>
 
-## Um pouco sobre a HartB
+## 
+
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+Um pouco sobre a HartB
+:::
+
 <hr/>
 
 <br/>
@@ -153,7 +213,12 @@ editor_options:
 ![Google for Startups Investimento, Aceleração, Treinamento e Produtos](images/google_startups.png){fig-align="center" width="500"}
 </center>
 
-## Um pouco sobre a HartB
+## 
+
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+Um pouco sobre a HartB
+:::
+
 <hr/>
 
 <center>
@@ -162,8 +227,12 @@ editor_options:
 
 
 
+## 
 
-## O que aprendi de novo
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+O que aprendi de novo
+:::
+
 <hr/>
 
 <br/>
@@ -174,7 +243,7 @@ editor_options:
 
 <p>
 
-- Git Lab
+- GitLab
 
 <p>
 
@@ -187,8 +256,19 @@ editor_options:
 
     - Arquitetura Limpa e Código Limpo
 
+## {auto-animate=true}
 
-## 3 pilares para o desenvolvimento profissional
+::: {style="margin-top: 200px; font-size: 3em; font-weight: bold;"}
+3 pilares para o desenvolvimento profissional
+:::
+
+
+## {auto-animate=true}
+
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+3 pilares para o desenvolvimento profissional
+:::
+
 <hr/>
 
 <br/>
@@ -208,14 +288,24 @@ editor_options:
 
 - Pilar 3: Network 
 
-## Pilar 1 
+## {auto-animate=true}
 
-### Sempre faça um pouco a mais
+::: {style="margin-top: 200px; font-size: 3em;"}
+Pilares 
+:::
 
+
+## {auto-animate=true}
+
+::: {style="margin-top: 10px; font-size: 2em;"}
+Pilar 1 
+:::
+
+#### Sempre faça um pouco a mais
 
 ```{python}
 #| eval: true
-#| output: true
+#| fig-align: center
 import plotly.graph_objects as go
 from easeimage.utils import io
 import pandas as pd
@@ -330,6 +420,14 @@ fig.update_layout(
         yanchor='top',
         xanchor='left',
     ),
+     title=dict(
+        text='Linguagens de programação estudadas ao longo dos anos<br>',
+        x=0.5,
+        y=0.95,
+        font=dict(
+            size=25,
+            color='#6295CB'
+        )),
     paper_bgcolor='white',
     plot_bgcolor='white',
     hovermode='closest')
@@ -346,7 +444,7 @@ fig.show()
 
 ## Pilar 2
 
-### Se pode ser automatizado, deve ser automatizado
+#### Se pode ser automatizado, deve ser automatizado
 
 <center>
 ![Ferramentas para automatização de processos, exercícios e projetos](images/ferramentas.png){fig-align="center" width="1000"}
@@ -355,6 +453,7 @@ fig.show()
 
 ## Pilar 3 
 
+#### Network
 
 <p>
 
@@ -368,26 +467,20 @@ fig.show()
 
 - Conexão com as pessoas é a melhor forma de mostrar o seu desempenho
 
-## Caminho "Ótimo"
 
-<hr/>
+## {auto-animate=true}
 
-<br/>
+::: {style="margin-top: 200px; font-size: 3em; font-weight: bold;"}
+Estatístico vs Cientista da Computação
+:::
 
-<br/>
 
+## {auto-animate=true}
 
-- Em R:
-    - Projeto com Análise Descritiva apenas;
-    - Projeto com modelos simples de Machine Learning (Regressão Logística);
-    - Projeto com modelos mais complexos (Random Forest e XGBoost).
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+Estatístico vs Cientista da Computação
+:::
 
-- Em Python:
-    - Refazer o Projeto do modelo simples;
-    - Refazer o Projeto do modelo complexo;
-    - Projeto com Web Scraping para Tratamento de dados.
-
-## Estatístico vs Cientista da Computação
 <hr/>
 
 
@@ -411,14 +504,55 @@ fig.show()
 
 - Cientistas da Computação tem sido atraídos por Engenharia de Machine Learning e MLOPS
 
-## Estatístico vs Cientista da Computação
+## 
+
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+Estatístico vs Cientista da Computação
+:::
 
 <center>
 ![Processos que um estatístico deve conhecer](images/EDA.png){fig-align="center" width="600"}
 </center>
 
 
-# "Falar é fácil, me mostre os cursos"
+## {auto-animate=true}
+
+::: {style="margin-top: 200px; font-size: 3em; font-weight: bold;"}
+Caminho "Ótimo"
+:::
+
+
+## {auto-animate=true}
+
+::: {style="margin-top: 10px; font-size: 2em; font-weight: bold;"}
+Caminho "Ótimo"
+:::
+
+
+<hr/>
+
+<br/>
+
+
+
+- Em R:
+    - Projeto com Análise Descritiva apenas;
+    - Projeto com modelos simples de Machine Learning (Regressão Logística);
+    - Projeto com modelos mais complexos (Random Forest e XGBoost).
+
+- Em Python:
+    - Refazer o Projeto do modelo simples;
+    - Refazer o Projeto do modelo complexo;
+    - Projeto com Web Scraping para Tratamento de dados.
+
+
+"Falar é fácil, me mostre os ~~códigos~~ cursos"
+===============
+
+::: footer
+- Linus Torvalds, criador do Kernel Linux e Git
+:::
+
 
 ## Cursos para Aprimoramento 
 <center>
@@ -444,7 +578,7 @@ fig.show()
 
 - [Noções de SQL e Tidyverse com a Me. Cátia e Dr. Magno](https://www.youtube.com/watch?v=vdV1xHiwirI&t=86s)
 
-- [WebScraping com R com o Dr. Jodavid](https://github.com/Jodavid/WebScraping_com_R_GithubActions)
+- [WebScraping com R com o Dr. Jodavid](https://www.youtube.com/watch?v=oxsEIXeZjv8)
 
 
 ##### Avançado
@@ -459,4 +593,10 @@ fig.show()
 
 - [Alguns projetos em Estatística e Ciência de Dados](https://github.com/VitorBSP?tab=repositories)
 
-# Obrigado!
+# O poder dos dados é atingir o seu público para impactar mais pessoas!
+
+**Obrigado!**
+
+Qualquer dúvida estou disponível tanto aqui quanto nas redes sociais.
+
+
